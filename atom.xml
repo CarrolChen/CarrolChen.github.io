@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>CarrolChen&#39;s Blogs</title>
+  <icon>http://blog.19950628.xyz/icon.png</icon>
+  <subtitle>愿你出走半生，归来仍是少年</subtitle>
+  <link href="http://blog.19950628.xyz/atom.xml" rel="self"/>
+  
+  <link href="http://blog.19950628.xyz/"/>
+  <updated>2021-04-15T16:00:28.471Z</updated>
+  <id>http://blog.19950628.xyz/</id>
+  
+  <author>
+    <name>Carrol Chen</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《Python编程：从入门到实践（第二版）》自学笔记（十八）</title>
+    <link href="http://blog.19950628.xyz/2021/04/07/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%85%AB%EF%BC%89/"/>
+    <id>http://blog.19950628.xyz/2021/04/07/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%85%AB%EF%BC%89/</id>
+    <published>2021-04-06T16:00:00.000Z</published>
+    <updated>2021-04-15T16:00:28.471Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="software testing" scheme="http://blog.19950628.xyz/categories/software-testing/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《Python编程：从入门到实践（第二版）》自学笔记（十七）</title>
+    <link href="http://blog.19950628.xyz/2021/04/03/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%B8%83%EF%BC%89/"/>
+    <id>http://blog.19950628.xyz/2021/04/03/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%B8%83%EF%BC%89/</id>
+    <published>2021-04-02T16:00:00.000Z</published>
+    <updated>2021-04-11T07:57:19.015Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="software testing" scheme="http://blog.19950628.xyz/categories/software-testing/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《Python编程：从入门到实践（第二版）》自学笔记（十六）</title>
+    <link href="http://blog.19950628.xyz/2021/04/02/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%85%AD%EF%BC%89/"/>
+    <id>http://blog.19950628.xyz/2021/04/02/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%85%AD%EF%BC%89/</id>
+    <published>2021-04-01T16:00:00.000Z</published>
+    <updated>2021-04-07T16:20:57.833Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="software testing" scheme="http://blog.19950628.xyz/categories/software-testing/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《Python编程：从入门到实践（第二版）》自学笔记（十五）</title>
+    <link href="http://blog.19950628.xyz/2021/04/01/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%BA%94%EF%BC%89/"/>
+    <id>http://blog.19950628.xyz/2021/04/01/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%BA%94%EF%BC%89/</id>
+    <published>2021-03-31T16:00:00.000Z</published>
+    <updated>2021-04-07T16:29:29.087Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="software testing" scheme="http://blog.19950628.xyz/categories/software-testing/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《Python编程：从入门到实践（第二版）》自学笔记（十四）</title>
+    <link href="http://blog.19950628.xyz/2021/03/31/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89/"/>
+    <id>http://blog.19950628.xyz/2021/03/31/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89/</id>
+    <published>2021-03-30T16:00:00.000Z</published>
+    <updated>2021-04-07T16:26:46.960Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="software testing" scheme="http://blog.19950628.xyz/categories/software-testing/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《Python编程：从入门到实践（第二版）》自学笔记（十三）</title>
+    <link href="http://blog.19950628.xyz/2021/03/30/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89/"/>
+    <id>http://blog.19950628.xyz/2021/03/30/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89/</id>
+    <published>2021-03-29T16:00:00.000Z</published>
+    <updated>2021-04-01T11:49:40.632Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="software testing" scheme="http://blog.19950628.xyz/categories/software-testing/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《Python编程：从入门到实践（第二版）》自学笔记（十二）</title>
+    <link href="http://blog.19950628.xyz/2021/03/29/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89/"/>
+    <id>http://blog.19950628.xyz/2021/03/29/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89/</id>
+    <published>2021-03-28T16:00:00.000Z</published>
+    <updated>2021-03-29T15:13:24.144Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="software testing" scheme="http://blog.19950628.xyz/categories/software-testing/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>永远相信美好的事情即将发生</title>
+    <link href="http://blog.19950628.xyz/2021/03/28/%E6%B0%B8%E8%BF%9C%E7%9B%B8%E4%BF%A1%E7%BE%8E%E5%A5%BD%E7%9A%84%E4%BA%8B%E6%83%85%E5%8D%B3%E5%B0%86%E5%8F%91%E7%94%9F/"/>
+    <id>http://blog.19950628.xyz/2021/03/28/%E6%B0%B8%E8%BF%9C%E7%9B%B8%E4%BF%A1%E7%BE%8E%E5%A5%BD%E7%9A%84%E4%BA%8B%E6%83%85%E5%8D%B3%E5%B0%86%E5%8F%91%E7%94%9F/</id>
+    <published>2021-03-27T16:00:00.000Z</published>
+    <updated>2021-03-29T15:25:25.442Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="life" scheme="http://blog.19950628.xyz/categories/life/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《Python编程：从入门到实践（第二版）》自学笔记（十一）</title>
+    <link href="http://blog.19950628.xyz/2021/03/27/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89/"/>
+    <id>http://blog.19950628.xyz/2021/03/27/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89/</id>
+    <published>2021-03-26T16:00:00.000Z</published>
+    <updated>2021-03-28T14:10:27.604Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="software testing" scheme="http://blog.19950628.xyz/categories/software-testing/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《Python编程：从入门到实践（第二版）》自学笔记（十）</title>
+    <link href="http://blog.19950628.xyz/2021/03/26/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%EF%BC%89/"/>
+    <id>http://blog.19950628.xyz/2021/03/26/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%EF%BC%89/</id>
+    <published>2021-03-25T16:00:00.000Z</published>
+    <updated>2021-03-28T11:09:01.130Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="software testing" scheme="http://blog.19950628.xyz/categories/software-testing/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《Python编程：从入门到实践（第二版）》自学笔记（九）</title>
+    <link href="http://blog.19950628.xyz/2021/03/25/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B9%9D%EF%BC%89/"/>
+    <id>http://blog.19950628.xyz/2021/03/25/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B9%9D%EF%BC%89/</id>
+    <published>2021-03-24T16:00:00.000Z</published>
+    <updated>2021-03-28T08:40:26.487Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="software testing" scheme="http://blog.19950628.xyz/categories/software-testing/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《Python编程：从入门到实践（第二版）》自学笔记（八）</title>
+    <link href="http://blog.19950628.xyz/2021/03/24/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%85%AB%EF%BC%89/"/>
+    <id>http://blog.19950628.xyz/2021/03/24/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%85%AB%EF%BC%89/</id>
+    <published>2021-03-23T16:00:00.000Z</published>
+    <updated>2021-03-25T14:50:48.206Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="software testing" scheme="http://blog.19950628.xyz/categories/software-testing/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《Python编程：从入门到实践（第二版）》自学笔记（七）</title>
+    <link href="http://blog.19950628.xyz/2021/03/23/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%83%EF%BC%89/"/>
+    <id>http://blog.19950628.xyz/2021/03/23/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%83%EF%BC%89/</id>
+    <published>2021-03-22T16:00:00.000Z</published>
+    <updated>2021-03-24T16:15:17.177Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="software testing" scheme="http://blog.19950628.xyz/categories/software-testing/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《Python编程：从入门到实践（第二版）》自学笔记（六）</title>
+    <link href="http://blog.19950628.xyz/2021/03/22/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%85%AD%EF%BC%89/"/>
+    <id>http://blog.19950628.xyz/2021/03/22/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%85%AD%EF%BC%89/</id>
+    <published>2021-03-21T16:00:00.000Z</published>
+    <updated>2021-03-22T15:25:14.425Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="software testing" scheme="http://blog.19950628.xyz/categories/software-testing/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《Python编程：从入门到实践（第二版）》自学笔记（五）</title>
+    <link href="http://blog.19950628.xyz/2021/03/21/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89/"/>
+    <id>http://blog.19950628.xyz/2021/03/21/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89/</id>
+    <published>2021-03-20T16:00:00.000Z</published>
+    <updated>2021-03-23T12:14:33.787Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="software testing" scheme="http://blog.19950628.xyz/categories/software-testing/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《Python编程：从入门到实践（第二版）》自学笔记（四）</title>
+    <link href="http://blog.19950628.xyz/2021/03/20/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/"/>
+    <id>http://blog.19950628.xyz/2021/03/20/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/</id>
+    <published>2021-03-19T16:00:00.000Z</published>
+    <updated>2021-03-21T14:44:19.719Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="software testing" scheme="http://blog.19950628.xyz/categories/software-testing/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《Python编程：从入门到实践（第二版）》自学笔记（三）</title>
+    <link href="http://blog.19950628.xyz/2021/03/19/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/"/>
+    <id>http://blog.19950628.xyz/2021/03/19/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/</id>
+    <published>2021-03-18T16:00:00.000Z</published>
+    <updated>2021-03-20T17:06:40.696Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="software testing" scheme="http://blog.19950628.xyz/categories/software-testing/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《Python编程：从入门到实践（第二版）》自学笔记（二）</title>
+    <link href="http://blog.19950628.xyz/2021/03/18/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <id>http://blog.19950628.xyz/2021/03/18/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/</id>
+    <published>2021-03-17T16:00:00.000Z</published>
+    <updated>2021-03-19T15:59:09.861Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="software testing" scheme="http://blog.19950628.xyz/categories/software-testing/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《Python编程：从入门到实践（第二版）》自学笔记（一）</title>
+    <link href="http://blog.19950628.xyz/2021/03/02/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>http://blog.19950628.xyz/2021/03/02/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</id>
+    <published>2021-03-01T16:00:00.000Z</published>
+    <updated>2021-03-17T13:46:01.922Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="software testing" scheme="http://blog.19950628.xyz/categories/software-testing/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>保姆级教你搭建个人工作站服务器</title>
+    <link href="http://blog.19950628.xyz/2021/02/05/%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E4%BD%A0%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%B7%A5%E4%BD%9C%E7%AB%99%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>http://blog.19950628.xyz/2021/02/05/%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E4%BD%A0%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%B7%A5%E4%BD%9C%E7%AB%99%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
+    <published>2021-02-04T16:00:00.000Z</published>
+    <updated>2021-02-08T14:11:54.773Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="router" scheme="http://blog.19950628.xyz/categories/router/"/>
+    
+    
+  </entry>
+  
+</feed>
