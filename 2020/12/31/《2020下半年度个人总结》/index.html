@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>《Python编程：从入门到实践（第二版）》自学笔记（十五） |  CarrolChen&#39;s Blogs</title>
+      <title>《2020下半年度个人总结》 |  CarrolChen&#39;s Blogs</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.jpg" />
@@ -60,7 +60,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-《Python编程：从入门到实践（第二版）》自学笔记（十五）"
+  id="post-《2020下半年度个人总结》"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -71,7 +71,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  《Python编程：从入门到实践（第二版）》自学笔记（十五）
+  《2020下半年度个人总结》
 </h1>
  
 
@@ -79,19 +79,15 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2021/04/01/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%BA%94%EF%BC%89/" class="article-date">
-  <time datetime="2021-03-31T16:00:00.000Z" itemprop="datePublished">2021-04-01</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/software-testing/">software testing</a>
-  </div>
-  
+      <a href="/2020/12/31/%E3%80%8A2020%E4%B8%8B%E5%8D%8A%E5%B9%B4%E5%BA%A6%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93%E3%80%8B/" class="article-date">
+  <time datetime="2020-12-30T16:00:00.000Z" itemprop="datePublished">2020-12-31</time>
+</a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.5k</span>
+            <span class="post-count">3.2k</span>
         </span>
     </span>
 
@@ -100,7 +96,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">6 分钟</span>
+            <span class="post-count">10 分钟</span>
         </span>
     </span>
 </div>
@@ -116,31 +112,30 @@
     <div class="article-entry" itemprop="articleBody">
        
   
-    <div id="aplayer-MXpasBrk" class="aplayer aplayer-tag-marker meting-tag-marker"
-         data-id="415191926" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
+    <div id="aplayer-RdPoOYYR" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="3932159" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
     ></div>
 
-<h3 id="一、向函数传递列表"><a href="#一、向函数传递列表" class="headerlink" title="一、向函数传递列表"></a><strong>一、向函数传递列表</strong></h3><p>将列表传递给函数后，带来的好处是：函数可以直接访问列表中的内容，提高函数处理列表的效率</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def greet_users(names):</span><br><span class="line">	&quot;&quot;&quot;向列表中的每位用户发出简单的问候。&quot;&quot;&quot;</span><br><span class="line">	for name in names:</span><br><span class="line">		msg = f&quot;Hello, &#123;name.title()&#125;!&quot;</span><br><span class="line">		print(msg)</span><br><span class="line">usernames = [&#x27;hannah&#x27;, &#x27;ty&#x27;, &#x27;margot&#x27;]</span><br><span class="line">greet_users(usernames)</span><br><span class="line">输出：</span><br><span class="line">Hello, Hannah!</span><br><span class="line">Hello, Ty!</span><br><span class="line">Hello, Margot!</span><br></pre></td></tr></table></figure>
-
-<p>在之前单独接触列表时，曾涉及到列表中的元素是可以直接进行修改的，同样的在这里函数中列表也是可以修改的，两者是通的，需要注意的是：函数对列表作出的任何修改都是永久性的</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">##以下代码块是未使用函数实现的，未使用函数，未使用函数！！！</span><br><span class="line"></span><br><span class="line"># 首先创建一个列表，其中包含一些要打印的设计。</span><br><span class="line">unprinted_designs = [&#x27;phone case&#x27;, &#x27;robot pendant&#x27;, &#x27;dodecahedron&#x27;]</span><br><span class="line">completed_models = []</span><br><span class="line"># 模拟打印每个设计，直到没有未打印的设计为止。</span><br><span class="line"># 打印每个设计后，都将其移到列表completed_models中。</span><br><span class="line">while unprinted_designs:</span><br><span class="line">	current_design = unprinted_designs.pop()</span><br><span class="line">	print(f&quot;Printing model: &#123;current_design&#125;&quot;)</span><br><span class="line">	completed_models.append(current_design)</span><br><span class="line"># 显示打印好的所有模型。</span><br><span class="line">print(&quot;\nThe following models have been printed:&quot;)</span><br><span class="line">for completed_model in completed_models:</span><br><span class="line">	print(completed_model)</span><br><span class="line">输出：</span><br><span class="line">Printing model: dodecahedron</span><br><span class="line">Printing model: robot pendan</span><br><span class="line">Printing model: phone case</span><br><span class="line"></span><br><span class="line">The following models have been printed:</span><br><span class="line">dodecahedron</span><br><span class="line">robot pendant</span><br><span class="line">phone case</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">##以下代码块是使用函数实现的，使用函数，使用函数！！！</span><br><span class="line">def print_models(unprinted_designs, completed_models):</span><br><span class="line">	&quot;&quot;&quot;</span><br><span class="line">	模拟打印每个设计，直到没有未打印的设计为止。 </span><br><span class="line">	打印每个设计后，都将其移到列表completed_models中。</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    while unprinted_designs:</span><br><span class="line">    current_design = unprinted_designs.pop()</span><br><span class="line">    print(f&quot;Printing model: &#123;current_design&#125;&quot;)</span><br><span class="line">    completed_models.append(current_design)</span><br><span class="line">def show_completed_models(completed_models):</span><br><span class="line">	&quot;&quot;&quot;显示打印好的所有模型。&quot;&quot;&quot;</span><br><span class="line">	print(&quot;\nThe following models have been printed:&quot;)</span><br><span class="line">	for completed_model in completed_models:</span><br><span class="line">		print(completed_model)</span><br><span class="line">unprinted_designs = [&#x27;phone case&#x27;, &#x27;robot pendant&#x27;, &#x27;dodecahedron&#x27;]</span><br><span class="line">completed_models = []</span><br><span class="line">print_models(unprinted_designs, completed_models)</span><br><span class="line">show_completed_models(completed_models)</span><br><span class="line">输出：</span><br><span class="line">Printing model: dodecahedron</span><br><span class="line">Printing model: robot pendan</span><br><span class="line">Printing model: phone case</span><br><span class="line"></span><br><span class="line">The following models have been printed:</span><br><span class="line">dodecahedron</span><br><span class="line">robot pendant</span><br><span class="line">phone case</span><br></pre></td></tr></table></figure>
-
-<p>但是由于函数对列表的修改是永久性的，无法保证原列表不受影响，所以这里引入了之前所提到的切片副本的概念，即向函数传递的非源列表，而是源列表的副本，这样函数修改的列表即为列表的副本</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">##以下代码块是使用函数及列表切片副本实现的，使用函数及列表切片副本，使用函数及列表切片副本！！！</span><br><span class="line">def print_models(unprinted_designs[:],, completed_models):</span><br><span class="line">	&quot;&quot;&quot;</span><br><span class="line">	模拟打印每个设计，直到没有未打印的设计为止。 </span><br><span class="line">	打印每个设计后，都将其移到列表completed_models中。</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    while unprinted_designs:</span><br><span class="line">    current_design = unprinted_designs.pop()</span><br><span class="line">    print(f&quot;Printing model: &#123;current_design&#125;&quot;)</span><br><span class="line">    completed_models.append(current_design)</span><br><span class="line">def show_completed_models(completed_models):</span><br><span class="line">	&quot;&quot;&quot;显示打印好的所有模型。&quot;&quot;&quot;</span><br><span class="line">	print(&quot;\nThe following models have been printed:&quot;)</span><br><span class="line">	for completed_model in completed_models:</span><br><span class="line">		print(completed_model)</span><br><span class="line">unprinted_designs = [&#x27;phone case&#x27;, &#x27;robot pendant&#x27;, &#x27;dodecahedron&#x27;]</span><br><span class="line">completed_models = []</span><br><span class="line">print_models(unprinted_designs, completed_models)</span><br><span class="line">show_completed_models(completed_models)</span><br><span class="line">输出：</span><br><span class="line">Printing model: dodecahedron</span><br><span class="line">Printing model: robot pendan</span><br><span class="line">Printing model: phone case</span><br><span class="line"></span><br><span class="line">The following models have been printed:</span><br><span class="line">dodecahedron</span><br><span class="line">robot pendant</span><br><span class="line">phone case</span><br></pre></td></tr></table></figure>
-
-<h3 id="二、传递任意数量的实参"><a href="#二、传递任意数量的实参" class="headerlink" title="二、传递任意数量的实参"></a><strong>二、传递任意数量的实参</strong></h3><p>其实向函数传递任意数量的实参，书中把它看做向函数传递元组，元组里包含多个元素。因为有时候，预先不知道函数需要接受多少个实参，但在Python是允许函数从调用语句中收集任意数量的实参的，而在我自己理解的是：向函数传递列表，因为列表和元组很相似，最根本的区别是：列表中的元素是可以修改的，而元组中的元素是不可以修改的。然而我们去向形参传递实参的时候，实参的元素本就是一个可变的过程</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def make_pizza(*toppings):</span><br><span class="line">	&quot;&quot;&quot;打印顾客点的所有配料。&quot;&quot;&quot;</span><br><span class="line">	print(toppings)</span><br><span class="line">make_pizza(&#x27;pepperoni&#x27;)</span><br><span class="line">make_pizza(&#x27;mushrooms&#x27;, &#x27;green peppers&#x27;, &#x27;extra cheese&#x27;)</span><br><span class="line">输出：</span><br><span class="line">(&#x27;pepperoni&#x27;,) </span><br><span class="line">(&#x27;mushrooms&#x27;, &#x27;green peppers&#x27;, &#x27;extra cheese&#x27;)</span><br></pre></td></tr></table></figure>
-
-<p>形参名*toppings中的星号让Python创建一个名为toppings的空元组，并将收到的所有值都封装到这个元组中，即便函数只收到一个值，当然如果想要结合位置，可以使实参和形参保持对应关系，值得注意的是：如果有需要传递不确定数量的实参时，形参位置必须要放在最后</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">def make_pizza(size, *toppings):</span><br><span class="line">	&quot;&quot;&quot;概述要制作的比萨。&quot;&quot;&quot;</span><br><span class="line">	print(f&quot;\nMaking a &#123;size&#125;-inch pizza with the following toppings:&quot;)</span><br><span class="line">	for topping in toppings:</span><br><span class="line">		print(f&quot;- &#123;topping&#125;&quot;)</span><br><span class="line">make_pizza(16, &#x27;pepperoni&#x27;)</span><br><span class="line">make_pizza(12, &#x27;mushrooms&#x27;, &#x27;green peppers&#x27;, &#x27;extra cheese&#x27;)</span><br><span class="line">输出：</span><br><span class="line">Making a 16-inch pizza with the following toppings:</span><br><span class="line">- pepperoni</span><br><span class="line"></span><br><span class="line">Making a 12-inch pizza with the following toppings:</span><br><span class="line">- mushrooms </span><br><span class="line">- green peppers </span><br><span class="line">- extra cheese</span><br></pre></td></tr></table></figure>
-
-<p>接下的的代码块示例是我在接触使用任意数量的关键字实参时，觉得有点绕的地方，这里Key一下，防止日后纠结转不过来，个人理解的其实质是：函数体括号中存在的是一个完整的字典，首先函数处理的是先让字典user_info里先有第一个键值对：’first_name’:’first’，其次处理的是让字典user_info里再有第二个键值对：’last_name’:’last’，接下来由于**user_info可以接受任意数量的实参，所以这时接收了location=’princeton’和field=’physics’这两个键值对，所以最后一共在字典user_info里会有4个键值对，而不是之前一直纠结的只有’location’:’princeton’和’field’: ‘physics’这两个键值对了</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def build_profile(first, last, **user_info):</span><br><span class="line">	&quot;&quot;&quot;创建一个字典，其中包含我们知道的有关用户的一切。&quot;&quot;&quot;</span><br><span class="line">	user_info[&#x27;first_name&#x27;] = first</span><br><span class="line">	user_info[&#x27;last_name&#x27;] = last</span><br><span class="line">	return user_info</span><br><span class="line">user_profile = build_profile(&#x27;albert&#x27;, </span><br><span class="line">							&#x27;einstein&#x27;,</span><br><span class="line">                            location=&#x27;princeton&#x27;, 															field=&#x27;physics&#x27;)</span><br><span class="line">print(user_profile)</span><br><span class="line">输出：</span><br><span class="line">&#123;&#x27;location&#x27;: &#x27;princeton&#x27;, &#x27;field&#x27;: &#x27;physics&#x27;, &#x27;first_name&#x27;: &#x27;albert&#x27;, &#x27;last_name&#x27;: &#x27;einstein&#x27;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>啊，终于把这里弄理解，搞懂了，一直卡在这里~~~</p>
+<p>2020年，没有上半年度的个人总结，因为今年注定有些遗憾和不完美</p>
+<p>与其说是个人下半年度总结，还不如更接地气的讲，哪些事是对自己产生影响比较大的回忆。其实对于自身来讲，我很清楚自己想要的是什么，并一直坚信一种信念是：“你想成为一个什么样的人，你就是一个什么样的人”。</p>
+<p>2020下半年度个人总结，出于最原始的目的是想为自己沪漂这一路走过的磕磕绊绊作一个载入，也为后来者提供一个借鉴。在此期间，有舍有得，也有失而复得，而更多的是作了很多的选择。</p>
+<h3 id="一、事业"><a href="#一、事业" class="headerlink" title="一、事业"></a><strong>一、事业</strong></h3><p>目前从事的IT行业的软件测试工作，现处涉及的领域是银行金融，之所以没有把它用【工作】二字概括，是因为这段时间的重要性，我是把它切实的融入到自身发展规划中去进行考虑的。</p>
+<p>在快要成为历史的2020年年底，冒着巨大的风险，依然遵循自己的内心，选择了非跨行型跳槽。我很清楚在未来自身的10年黄金时间和自己从事的IT软件行业10年的生命周期是紧紧牵连。从25岁到35岁，在此期间的我想给自己多做一些加法，在能够承受的范围内经历的更多，让自己在未来职业生涯中拥有更多的自信和勇气。</p>
+<p>然而这次的经历，不得不让我对学历重新的进行审视。对于技术性的打工人来讲，一二线城市的要求是越来越高，越来越专业正规化。起步是本科，都是一种很普遍正常的现象，大专学历在去年下半年开始，在这个行业已经开始不淡定了，今年更是勒的上紧。同样对于大专学历的我来讲，也感到一阵急促，庆幸的是自己意识到形势，读了升本，暂未被这个行业所淘汰，赶上末班车。所以我是真心的建议：大专生走向社会，只要自己的收入还说的过去，一定要把升学历这个动作提前规划好。不要像我浑浑噩噩，混吃等死玩完了第一个宝贵的3年时间才去规划。</p>
+<p>至于目前技术这一块，自己在接触一些开发编程语言，之前开始的时候有些迷茫，选择C语言，但后来通过身边一些从事IT行业同事建议，步入到Java的学习中。可是从一个小白，一下子开始接触，Java的友好度不是太好，随后自行接触到Python，现在一直在学习基础中，推荐一本书，<a href="www.ituring.com.cn">图灵社区</a>里的<a target="_blank" rel="noopener" href="https://www.ituring.com.cn/book/2784">《Python编程：从入门到实践（第二版）》</a>，对新手的友好度还是不错的。另外通过一些媒体平台，简单了解一些前端JavaScript、数据库MySQL和Linux操作系统的基础知识点，但是我总感觉学的不深入，知识了解的皮毛很空洞。所以，明年的计划中是想将重心回归到测试这条主干线上来，Python基本知识点消化完之后，走自动化测试或者接口测试的路线。同样的，也会将这一过程中的QA同步至个人博客下的<a target="_blank" rel="noopener" href="https://www.carrol.xyz/categories/software-testing/">编程测试</a>分栏，方便后续再遇到此状况，得到解决的方法。</p>
+<p>截止目前，我自己最满意的技术实操，是通过不断的上网找资料，不断的折腾，不断的优化，亲自为自己搭建了这么一个博客平台，来记载平时的点点滴滴，可能明年会经历一次域名到期的更换，到时候会换上一个长达10年的白金小姨子域名。</p>
+<h3 id="二、生活"><a href="#二、生活" class="headerlink" title="二、生活"></a><strong>二、生活</strong></h3><p>2016年12月28号校招来的上海，生活了三年左右，其实和大部分来城打工者的心态差不多，当时就想能够走出省，去大城市看看外面的世界，也没考虑过太多。经过这几年的时间来看，其实上海的生活成本并不像外人嘴中高的那么离谱，对于我这种“土鳖”来讲，真的没太大。除非自己作的太狠，要不然对于一个拥有一份工作的人来讲，都是可以能够接受的，女孩子的话，每个月比男孩子再多个千把两千块化妆品、衣服消费费用啥的。我不知道是不是没处对象的原因，可能在这一块，我的生活压力几乎没什么，每个月固定的房租，交通费，餐饮费，保险费，偶尔买买衣服和电子垃圾的费用，其他的也没什么。有时间就自己做饭，也不点外卖，自己也偏点胖，吃的也想健康点。周六周日休息，就好好的补一个大懒觉，醒来洗洗做个饭，上会网看看电影，今年由于疫情的原因，很少也出去潇洒，单反都在家吃灰。今年的自由时间偏重，可能还是大部分砸在玩电子垃圾和技术提升层面的多一些。</p>
+<p>去年过年回家，嘴上一直吵吵着要换个好一点的房间，但看了看租金，自己还是舍不得，还是继续选择稍微次一点的单间，合租稍微相对划算一点。自己也讨厌搬来搬去，这是每个来上海打工人的共同憎恶点，也想在上海买个房，但终究败于现实，农村出来的小“土鳖”，口袋一贫如洗，也少了在上海买房这样白日梦。</p>
+<p>但买房的小心愿不能丢，6月底7月初，25岁生日，父母倾其所有，置办了一套房，自己也背上一座山，彻彻底底成为一个房奴。怎么讲呢，那时候的心情还是比较复杂的。首先映入脑子的是：老爸老妈自己的养老金全掏出来，再加上借亲戚的，要是买了房之后，我拿这么点屁工资，还不上了该怎么办？快近60岁的老两口，要是在这期间，不慎得个什么病，那又得怎么办？……反正那时候脑子都是一种悲喜交加的状态，当时交首付，一部分刷的卡，一部分付的现金，20几年，从来没手摸过那么的一百元钞票，都是一沓一沓的，一万块，好多，再想想十万，一百万，得有多少。同时也挺开心，毕竟有了一个家，有了烟火气，喜还是大于悲的。</p>
+<p>今年春节回来之后可能要进行一次搬家，因为一起合租的小伙伴要回老家了，也是有点突如其来。每天乘地铁来回上下班，也发现今年的现象，好多来上海的外地人都提前早早的回去了。三年前，当初一起来上海的七个小伙伴，几乎没几个留下来的，不知道为什么，也许在上海生存，真的很难，但我认为完全自己可以拼一把。因为之前我也曾有离开的想法，但可能自己思维比较清晰，清楚自己要的什么，怎么去改变自己所处的局面，就留下来了，跑步就是那时候养成的。那时刚来上海，底薪2K+全勤0.2K+提成，几个人去外滩说过的话，假如今后有一天，月薪过万就去东方明珠上去潇洒一圈，而今破了万，我依旧还是没去潇洒过，当初的年少轻狂，现在想想，月薪过万那够啊，够也就够喝个西北风。</p>
+<p>未来的生活，正如我之前记载的，两个字【无畏】，也有两个计划，一是从2021年开始，每年回家过年，用单反拍张全家福；二是在2021~2022年的某个时间段，散去银行卡里的积蓄，带一家人来上海兜兜转转，记忆里老妈这辈子还没出过省。</p>
+<h3 id="三、情感"><a href="#三、情感" class="headerlink" title="三、情感"></a><strong>三、情感</strong></h3><p>受家文化的影响，骨子里就很重情顾家</p>
+<p>首先是恩情。从跨入IT行业以来，其实中间磕磕绊绊的有很多，最关键的就是怎样找到一份工作，能让自己在上海先活下去。得上天怜悯眷顾，遇到一个跟我姐差不多大的姐，我们以“大兄弟”互称，从开始就业到后续跳槽，也一直在不停的提供帮助。虽说这是她的工作，但我认为就业这件事始终跟任何人没有丝毫关系，自己拿的薪水不分人家一分钱，别人没有任何义务去帮你，但能够不断提供帮助，提供渠道，给予援手，尤其是在你最需要帮助的时候，不顾一切拉你一把的，这份恩情要铭记。以后不管怎样，当对方有需要的时候，能力范围里，定当全力以赴，哪怕舍掉某些东西。</p>
+<p>其次是友情。玩的好算是至交的，原本就没几个，现在又在上海，基本没几个了。不需要有太多的酒肉之友，圈子小而干净，我很喜欢，买房的时候，就得益于跟自己一起玩的兄弟，提供的信息。不奢求太多，有空联系联系吃个饭，没事大家都忙，也要赚钱养家糊口，不扯淡。都说低质量的社交，不如高质量的独处，就很巴适。</p>
+<p>最后就是爱情。从我自身出发来看，真的没去想过太多，只是家里催的紧，有点急，介绍过几个，都是没结果。自己想谈对象么？打心里是真想。那为什么不谈？怕自己目前经济能力不够，养自己一个人还行，养两个人可能会有点压力，怕对方跟着自己吃苦，耽误人家，索性就自己一个人，干脆果断。不可否认，自己情商低，不会说甜言蜜语，只想踏踏实实的，自己也渣不起来，因为家教在那摆着。对于相亲，我的态度很直接： 不拒绝但也不会盲目接受，合适就处，不合适就散。相亲，其实是让自己去认识一个人，而不是去谈恋爱，它是一个低预期的东西，就是去见个面，多认识个朋友，再此基础上慢慢去了解对方，发现彼此之间的优点。大家彼此都很独立，不是谁离开谁就活不下去，也没有必要看对方脸色去作舔狗。真诚简单一点：我想，你也想，嗳，大家聊一聊，还不错，喜欢彼此就都主动一点，一拍即合。深知自己是个人，寻找的是一个今后能持家的伴侣，能一起走过几十年美好时光的人，不是找个祖宗天天供着的。不会因为寂寞，无聊，对方长得漂亮等条件而在一起，不管是男孩子也好，还是女孩子也罢，都不要因为一时的满足感而去谈恋爱，毕竟谈了也都是需求型的恋爱，在得到满足之后，会逐渐消退掉初始的情感。人对爱的渴望，就和人在口渴的时候想要喝水一样的，是一种本能，理性一点。</p>
+<h3 id="四、性格"><a href="#四、性格" class="headerlink" title="四、性格"></a><strong>四、性格</strong></h3><p>并不算活跃，多了几分沉稳，擅长沟通。相对比下，脾气其实并没有发现有多大的改变，还是铁憨憨。更大的改变可能是在沟通这一块，因为在上半年里听了几本书，其中有一本书叫《非暴力沟通》，也记载了一篇<a target="_blank" rel="noopener" href="https://www.carrol.xyz/2020/04/05/%E3%80%8A%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A%E3%80%8B%E5%90%AC%E4%B9%A6%E8%AE%B0">听书记</a>，我觉得里面的方法真的挺实用，沟通后整个人都很舒畅，具有积极向上引导的一面，传递一种正能能量，所以整个人看的也挺开，性子也挺耐了。</p>
+<p>但也在很多方面约束着自己，可以放松，但绝不能放纵，可以放肆自己还未退化的青春，但同时也会为自己的选择去负责。疯狂的时候也会熬夜打游戏，但是不会耽误明天自己的正事，也怕放松过度成放纵，受到惩罚。</p>
+<p><strong>2020，就这样吧；2021，启程~~~</strong></p>
  
       <!-- reward -->
       
@@ -211,7 +206,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://blog.19950628.xyz/2021/04/01/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%BA%94%EF%BC%89/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://blog.19950628.xyz/2020/12/31/%E3%80%8A2020%E4%B8%8B%E5%8D%8A%E5%B9%B4%E5%BA%A6%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93%E3%80%8B/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -222,19 +217,19 @@
    
   <nav class="article-nav">
     
-      <a href="/2021/04/02/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%85%AD%EF%BC%89/" class="article-nav-link">
+      <a href="/2021/02/05/%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E4%BD%A0%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%B7%A5%E4%BD%9C%E7%AB%99%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="article-nav-link">
         <strong class="article-nav-caption">啵一下</strong>
         <div class="article-nav-title">
           
-            《Python编程：从入门到实践（第二版）》自学笔记（十六）
+            保姆级教你搭建个人工作站服务器
           
         </div>
       </a>
     
     
-      <a href="/2021/03/31/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89/" class="article-nav-link">
+      <a href="/2020/12/03/Cookie%E3%80%81Session%E3%80%81Token%E3%80%81JWT%E7%AE%80%E5%8D%95%E8%AF%B4%E6%98%8E/" class="article-nav-link">
         <strong class="article-nav-caption">嗦一下</strong>
-        <div class="article-nav-title">《Python编程：从入门到实践（第二版）》自学笔记（十四）</div>
+        <div class="article-nav-title">Cookie、Session、Token、JWT简单说明</div>
       </a>
     
   </nav>
