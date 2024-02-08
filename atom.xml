@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>CarrolChen&#39;s Blogs</title>
+  <icon>https://blog.19950628.xyz/icon.png</icon>
+  <subtitle>愿你出走半生，归来仍是少年</subtitle>
+  <link href="https://blog.19950628.xyz/atom.xml" rel="self"/>
+  
+  <link href="https://blog.19950628.xyz/"/>
+  <updated>2024-02-08T08:37:28.764Z</updated>
+  <id>https://blog.19950628.xyz/</id>
+  
+  <author>
+    <name>Carrol Chen</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://blog.19950628.xyz/2024/02/08/hello-world/"/>
+    <id>https://blog.19950628.xyz/2024/02/08/hello-world/</id>
+    <published>2024-02-08T08:37:28.754Z</published>
+    <updated>2024-02-08T08:37:28.764Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
