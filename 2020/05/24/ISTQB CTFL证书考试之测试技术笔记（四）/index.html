@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta name="description" content="始终努力奔跑在搏取机会路上的乡巴佬" />
+      
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>ISTQB CTFL证书考试之测试技术笔记（四） |  CarrolChen&#39;s Blogs</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.jpg" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="CarrolChen's Blogs" type="application/atom+xml">
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-ISTQB CTFL证书考试之测试技术笔记（四）"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  ISTQB CTFL证书考试之测试技术笔记（四）
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/05/24/ISTQB%20CTFL%E8%AF%81%E4%B9%A6%E8%80%83%E8%AF%95%E4%B9%8B%E6%B5%8B%E8%AF%95%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/" class="article-date">
+  <time datetime="2020-05-23T16:00:00.000Z" itemprop="datePublished">2020-05-24</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/software-testing/">software testing</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">10.8k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">39 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  
+    <div id="aplayer-gfrgEIrd" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="442837913" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
+    ></div>
+
+<p><strong>测试技术部分涉及的理论性知识，范围特别的广泛，大脑理解的过程中需要有一个很清晰的目录结构框架，便于记忆，建议使用思维导图拎清骨架。其次，它是整个软件测试理论过程中所需逻辑感最强的一部分，什么是测试类型，包含有哪些？什么是测试方法，包含有哪些？测试方法，在实际测试过程中有哪些运用的场景？</strong></p>
+<p><img src="https://s1.ax1x.com/2020/05/24/tS6wZj.png"></p>
+<h3 id="一、专业术语中英对照表"><a href="#一、专业术语中英对照表" class="headerlink" title="一、专业术语中英对照表"></a><strong>一、专业术语中英对照表</strong></h3><table>
+<thead>
+<tr>
+<th>中文</th>
+<th>英文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>黑盒测试技术</td>
+<td>black-box test technique</td>
+</tr>
+<tr>
+<td>边界值分析</td>
+<td>boundary value analysis</td>
+</tr>
+<tr>
+<td>基于检查表的测试</td>
+<td>checklist-based testing</td>
+</tr>
+<tr>
+<td>覆盖</td>
+<td>coverage</td>
+</tr>
+<tr>
+<td>判定覆盖</td>
+<td>decision coverage</td>
+</tr>
+<tr>
+<td>判定表测试</td>
+<td>decision table testing</td>
+</tr>
+<tr>
+<td>错误推测</td>
+<td>error guessing</td>
+</tr>
+<tr>
+<td>等价类划分</td>
+<td>equivalence partitioning</td>
+</tr>
+<tr>
+<td>基于经验的测试技术</td>
+<td>experience-based test technique</td>
+</tr>
+<tr>
+<td>探索性测试</td>
+<td>exploratory testing</td>
+</tr>
+<tr>
+<td>状态转换测试</td>
+<td>state transition testing</td>
+</tr>
+<tr>
+<td>语句覆盖</td>
+<td>statement coverage</td>
+</tr>
+<tr>
+<td>测试技术</td>
+<td>test technique</td>
+</tr>
+<tr>
+<td>用例测试</td>
+<td>use case testing</td>
+</tr>
+<tr>
+<td>白盒测试技术</td>
+<td>white-box test technique</td>
+</tr>
+</tbody></table>
+<h3 id="二、测试技术的分类及测试类型"><a href="#二、测试技术的分类及测试类型" class="headerlink" title="二、测试技术的分类及测试类型"></a><strong>二、测试技术的分类及测试类型</strong></h3><p>理论是理论，实操是实操，实操是基于理论基础之上而作的一系列的动作，唯有实践才是检验真理的标准。在实际测试过程中，会遇到形形色色的专业名词测试，其实质有很多的相仿，只不过是换个叫法，再者，测试实操有些部分是理论无法考虑到的。现有实操，目前主要对测试技术的划分有：黑盒测试、白盒测试及灰盒测试，老成一点的还有基于经验的测试。</p>
+<h4 id="1-黑盒测试（测试技术分类）"><a href="#1-黑盒测试（测试技术分类）" class="headerlink" title="1.黑盒测试（测试技术分类）"></a><strong>1.黑盒测试（测试技术分类）</strong></h4><p>基于行为或者规格的测试，通过对适当测试依据的分析（例如：正式需求文档、需求规格说明、用例、用户故事或业务流程），这些技术适用于功能和非功能测试。黑盒测试技术关注在测试对象的输入和输出，而不考虑其内部结构。</p>
+<p>其特点包含但不局限于以下几点：①.测试条件、测试用例和测试数据的获取源自测试依据，可能包括软件需求、规格说明、用例和用户故事；②.测试用例可用于检查需求和需求实现之间的差距，以及需求本身的错误；③.覆盖度量是根据在测试依据中已测试的项和应用到测试依据的技术</p>
+<h5 id="A-功能测试（测试类型）"><a href="#A-功能测试（测试类型）" class="headerlink" title="A.功能测试（测试类型）"></a><strong>A.功能测试（测试类型）</strong></h5><p>只需考虑需要测试的各个功能，不需要考虑整个软件的内部结构及代码。一般从软件产品的界面、架构出发，按照需求编写出来的测试用例，输入数据在预期结果和实际结果之间进行评测，进而提出更加使产品达到用户使用的要求。</p>
+<h5 id="B-性能测试（测试类型）"><a href="#B-性能测试（测试类型）" class="headerlink" title="B.性能测试（测试类型）"></a><strong>B.性能测试（测试类型）</strong></h5><p>通过自动化的测试工具模拟多种正常、峰值以及异常负载条件来对系统的各项性能指标进行测试。负载测试和压力测试都属于性能测试，两者可以结合进行。</p>
+<h6 id="a-负载测试（测试类型）"><a href="#a-负载测试（测试类型）" class="headerlink" title="a.负载测试（测试类型）"></a><strong>a.负载测试（测试类型）</strong></h6><p>不限制软件的运行资源，测试软件的数据吞吐量上限，以发现设计上的错误或验证系统的负载能力。在这种测试中，将使测试对象承担不同的工作量，以评测和评估测试对象在不同工作量条件下的性能行为，以及持续正常运行的能力。</p>
+<p>负载测试的目标是确定并确保系统在超出最大预期工作量的情况下仍能正常运行。此外，负载测试还要评估性能特征，例如：响应时间、事务处理速率和其他与时间相关的方面。</p>
+<p>简而言之：通过负载测试，确定在各种工作负载下系统的性能，目标是测试当负载逐渐增加时，系统各项性能指标的变化情况。</p>
+<h6 id="b-压力测试（测试类型）"><a href="#b-压力测试（测试类型）" class="headerlink" title="b.压力测试（测试类型）"></a><strong>b.压力测试（测试类型）</strong></h6><p>通过给软件不断加压，强制其在极限的情况下运行，观察它可以运行到何种程度，从而发现性能缺陷，通过搭建与实际环境相似的测试环境，通过测试程序在同一时间内或某一段时间内，向系统发送预期数量的交易请求、测试系统在不同压力情况下的效率状况，以及系统可以承受的压力情况。然后做针对性的测试与分析，找到影响系统性能的瓶颈，评估系统在实际使用环境下的效率情况，评价系统性能以及判断是否需要对应用系统进行优化处理或结构调整。并对系统资源进行优化。</p>
+<p>软件系统的负载压力是指系统在某种指定软件、硬件及网络环境下承受的流量，例如并发用户数、持续运行时间、数据量等。其中并发用户数是负载压力的重要指标。</p>
+<p>简而言之：压力测试是通过确定一个系统的瓶颈或者不能接受的性能点，来获得系统能提供的最大服务级别的测试。</p>
+<h6 id="负载测试和压力测试的区别定义"><a href="#负载测试和压力测试的区别定义" class="headerlink" title="负载测试和压力测试的区别定义"></a>负载测试和压力测试的区别定义</h6><p><strong>详细说明：</strong></p>
+<p>负载测试是模拟实际软件系统所承受的负载条件的系统负荷，通过不断加载（如逐渐增加模拟用户的数量）或其它加载方式来观察不同负载下系统的响应时间和数据吞吐量、系统占用的资源（如CPU、内存）等，以检验系统的行为和特性，以发现系统可能存在的性能瓶颈、内存泄漏、不能实时同步等问题。负载测试更多地体现了一种方法或一种技术。</p>
+<p>压力测试是在强负载（大数据量、大量并发用户等）下的测试，查看应用系统在峰值使用情况下操作行为，从而有效地发现系统的某项功能隐患、系统是否具有良好的容错能力和可恢复能力。压力测试分为高负载下的长时间（如24小时以上）的稳定性压力测试和极限负载情况下导致系统崩溃的破坏性压力测试。</p>
+<p>压力测试可以被看作是负载测试的一种，即高负载下的负载测试，或者说压力测试采用负载测试技术。通过压力测试，可以更快地发现内存泄漏问题，还可以更快地发现影响系统稳定性的问题。例如，在正常负载情况下，某些功能不能正常使用或系统出错的概率比较低，可能一个月只出现一次，但在高负载（压力测试）下，可能一天就出现，从而发现有缺陷的功能或其它系统问题。通过负载测试，可以证明这一点，某个电子商务网站的订单提交功能，在10个并发用户时错误率是零，在50个并发用户时错误率是1%，而在200个并发用户时错误率是20%。</p>
+<p>负载测试是为了发现系统的性能问题，负载测试需要通过系统性能特性或行为来发现问题，从而为性能改进提供帮助，从这个意义看，负载测试可以看作性能测试的一部分。但它们两者的目的是不一样的，负载测试是为了发现缺陷，而性能测试是为了获取性能指标。因为性能测试过程中，也可以不调整负载，而是在同样负载情况下改变系统的结构、改变算法、改变硬件配置等等来得到性能指标数据，从这个意义看，负载测试可以看作是性能测试所用的一种技术，即性能测试使用负载测试的技术、使用负载测试的工具。性能测试要获得在不同的负载情况下的性能指标数据。</p>
+<p>通过负载测试和压力测试都可以获得系统正常工作时的极限负载或最大容量。容量测试，自然也是采用负载测试技术来实现，而在破坏性的压力测试中，容量的确可以看作是一种副产品——间接结果。</p>
+<p><strong>简而言之：</strong></p>
+<p>负载测试是通过改变系统负载方式、增加负载等来发现系统中所存在的性能问题。负载测试是一种测试方法，可以为性能测试、压力测试所采用。负载测试的加载方式也有很多种，可以根据测试需要来选择。</p>
+<p>性能测试是为获取或验证系统性能指标而进行测试。多数情况下，性能测试会在不同负载情况下进行。</p>
+<p>压力测试通常是在高负载情况下来对系统的稳定性进行测试，更有效地发现系统稳定性的隐患和系统在负载峰值的条件下功能隐患等。</p>
+<h5 id="C-可靠性测试（测试类型）"><a href="#C-可靠性测试（测试类型）" class="headerlink" title="C.可靠性测试（测试类型）"></a><strong>C.可靠性测试（测试类型）</strong></h5><p>为了评估产品在规定的寿命期间内，在预期的使用、运输或储存等所有环境下，保持功能可靠性而进行的活动。将软件暴露在自然的或人工的环境条件下经受其作用，以评价软件在实际使用、运输和储存的环境条件下的性能，并分析研究环境因素的影响程度及其作用机理。</p>
+<h4 id="2-白盒测试（测试技术分类）"><a href="#2-白盒测试（测试技术分类）" class="headerlink" title="2.白盒测试（测试技术分类）"></a><strong>2.白盒测试（测试技术分类）</strong></h4><p>依据被测软件分析程序内部构造，并根据内部构造设计用例，来对内部控制流程进行测试，可完全不顾程序的整体功能实现情况，通常又称结构测试、透明盒测试、逻辑驱动测试或基于代码的测试。</p>
+<p>“白盒”法全面了解程序内部逻辑结构、对所有逻辑路径进行测试。”白盒”法是穷举路径测试。在使用这一方案时，测试者必须检查程序的内部结构，从检查程序的逻辑着手，得出测试数据。</p>
+<h4 id="3-灰盒测试（测试技术分类）"><a href="#3-灰盒测试（测试技术分类）" class="headerlink" title="3.灰盒测试（测试技术分类）"></a><strong>3.灰盒测试（测试技术分类）</strong></h4><p>介于白盒测试与黑盒测试之间的一种测试，灰盒测试多用于集成测试阶段，不仅关注输出、输入的正确性，同时也关注程序内部的情况。灰盒测试不像白盒测试那样详细、完整，但又比黑盒测试更关注程序的内部逻辑，常常是通过一些表征性的现象、事件、标志来判断内部的运行状态，通常与web服务应用一起使用。</p>
+<p>灰盒测试相对白盒测试更加难以发现并解决潜在问题，尤其在一个单一的应用中，白盒测试的内部细节可以完全掌握。 灰盒测试结合了白盒测试和黑盒测试的要素。它考虑了用户端、特定的系统知识和操作环境。它在系统组件的协同性环境中评价应用软件的设计。</p>
+<p>灰盒测试由方法和工具组成，这些方法和工具取材于应用程序的内部知识和与之交互的环境，能够用于黑盒测试以增强测试效率、错误发现和错误分析的效率。</p>
+<h3 id="三、常见测试方法"><a href="#三、常见测试方法" class="headerlink" title="三、常见测试方法"></a><strong>三、常见测试方法</strong></h3><h4 id="1-黑盒测试（测试技术分类）-1"><a href="#1-黑盒测试（测试技术分类）-1" class="headerlink" title="1.黑盒测试（测试技术分类）"></a><strong>1.黑盒测试（测试技术分类）</strong></h4><h5 id="A-等价类划分（测试方法）"><a href="#A-等价类划分（测试方法）" class="headerlink" title="A.等价类划分（测试方法）"></a><strong>A.等价类划分（测试方法）</strong></h5><p>等价类划分法是将程序所有可能的输入数据（有效的和无效的）划分成若干个等价类。然后从每个部分中选取具有代表性的数据当做测试用例进行合理的分类，测试用例由有效等价类和无效等价类的代表组成，从而保证测试用例具有完整性和代表性。利用这一方法设计测试用例可以不考虑程序的内部结构，以需求规格说明书为依据，选择适当的典型子集，认真分析和推敲说明书的各项需求，特别是功能需求，尽可能多地发现错误。等价类划分法是一种系统性的确定要输入的测试条件的方法。</p>
+<p>由于等价类是在需求规格说明书的基础上进行划分的，并且等价类划分不仅可以用来确定测试用例中的数据的输入输出的精确取值范围，也可以用来准备中间值、状态和与时间相关的数据以及接口参数等，所以等价类可以用在系统测试、集成测试和组件测试中，在有明确的条件和限制的情况下，利用等价类划分技术可以设计出完备的测试用例。</p>
+<h6 id="a-有效等价类"><a href="#a-有效等价类" class="headerlink" title="a.有效等价类"></a><strong>a.有效等价类</strong></h6><p>有效等价类指对于程序规格说明来说，是合理的、有意义的输入数据构成的集合。利用有效等价类可以检验程序是否实现了规格说明预先规定的功能和性能。有效等价类可以是一个，也可以是多个，根据系统的输入域划分若干部分，然后从每个部分中选取少数有代表性数据当做数据测试的测试用例，等价类是输入域的集合。</p>
+<h6 id="b-无效等价类"><a href="#b-无效等价类" class="headerlink" title="b.无效等价类"></a><strong>b.无效等价类</strong></h6><p>无效等价类是指对于软件规格说明而言，没有意义的、不合理的输入数据集合。利用无效等价类，可以找出程序异常说明情况，检查程序的功能和性能的实现是否有不符合规格说明要求的地方。</p>
+<p><strong>Example</strong></p>
+<p>x&gt;1<br>有效等价类：x&gt;1  x&#x3D;2<br>无效等价类：x&lt;&#x3D;1,空，空格，字母，特殊字符……</p>
+<h5 id="B-边界值分析（测试方法）"><a href="#B-边界值分析（测试方法）" class="headerlink" title="B.边界值分析（测试方法）"></a><strong>B.边界值分析（测试方法）</strong></h5><p>边界值分析法就是对输入或输出的边界值进行测试的一种黑盒测试方法，通常是作为对等价类划分法的补充，这种情况下，其测试用例来自等价类的边界。在长期的测试工作中会发现，大量的错误是发生在输入或输出范围的边界上，而不是发生在输入输出范围的内部。因此针对各种边界情况设计测试用例，可以查出更多的错误。于此同时在边界值分析的过程中还经常会听到<strong>上点、内点</strong>及<strong>离点</strong>。</p>
+<h6 id="a-上点"><a href="#a-上点" class="headerlink" title="a.上点"></a><strong>a.上点</strong></h6><p>指边界上的点，无论此时的域是开区间还是闭区间。<strong>如果是开区间的话，上点就在域外，闭区间的话，上点就在域内。</strong></p>
+<h6 id="b-内点"><a href="#b-内点" class="headerlink" title="b.内点"></a><strong>b.内点</strong></h6><p>域内的任意点都是内点</p>
+<h6 id="c-离点"><a href="#c-离点" class="headerlink" title="c.离点"></a><strong>c.离点</strong></h6><p>指离上点最近的点，这里跟闭区间还是开区间有关系。<strong>如果是开区间的话，离点就在域内，闭区间的话，离点就在域外</strong>。</p>
+<p><strong>Example</strong></p>
+<p>正整数值域[66,88]</p>
+<p>上点：66，88，都是在域内；内点：域内得任意点；离点：65，89</p>
+<p>正整数值域(66,88]</p>
+<p>上点：66，88，其中一个是域内，一个是域外；内点：域内的任意点；离点是：67，89</p>
+<p>正整数值域(66,88)</p>
+<p>上点:66，88，都是在域外，内点：域内的任意点；离点：67，87</p>
+<h5 id="C-判定表（测试方法）"><a href="#C-判定表（测试方法）" class="headerlink" title="C.判定表（测试方法）"></a><strong>C.判定表（测试方法）</strong></h5><p>判定表是另一种表达逻辑判断的工具。与结构化语言和判断树相比，判断表的优点是能把所有条件组合充分地表达出来；其缺点是判定表的建立过程较烦杂，且表达方式不如前两种简便。判定表在用于知识表达中，有许多其他方式所达不到的作用，能够将复杂的问题按照各种可能的情况全部列举出来，简明并避免遗漏。因此，利用判定表能够设计出完整的测试用例集合。</p>
+<p>所涉及的4个概念性名词：<strong>条件桩，条件项，动作桩，动作项</strong>（结合Example作说明）</p>
+<h6 id="a-条件桩"><a href="#a-条件桩" class="headerlink" title="a.条件桩"></a><strong>a.条件桩</strong></h6><p>在左上部，列出了问题的所有条件，通常认为列出的条件的次序无关紧要。</p>
+<h6 id="b-动作桩"><a href="#b-动作桩" class="headerlink" title="b.动作桩"></a><strong>b.动作桩</strong></h6><p>在左下部，列出了问题规定可能采取的操作，这些操作的排列顺序没有约束。</p>
+<h6 id="c-条件项"><a href="#c-条件项" class="headerlink" title="c.条件项"></a><strong>c.条件项</strong></h6><p>在右上部，列出针对它左列条件的取值，在所有可能情况下的真假值。</p>
+<h6 id="d-动作项"><a href="#d-动作项" class="headerlink" title="d.动作项"></a><strong>d.动作项</strong></h6><p>在右下部，列出在条件项的各种取值情况下应该采取的动作。</p>
+<p><strong>Example</strong></p>
+<p><img src="https://s1.ax1x.com/2020/05/24/YzAQdU.png"></p>
+<p>规则：任何一个条件组合的特定取值及其相应要执行的操作称为规则。在判定表中贯穿条件项和动作项的一列就是一条规则。显然，判定表中列出多少组条件取值，也就有多少条规则，既条件项和动作项有多少列。<br>化简：就是规则合并有两条或多条规则具有相同的动作，并且其条件项之间存在着极为相似的关系。</p>
+<p><strong>化简示范</strong></p>
+<p>如下图左端，两规则动作项一样，条件项类似，在1、2条件项分别取Y、N时，无论条件3取何值，都执行同一操作。即要执行的动作与条件3无关，于是可合并。“－”表示与取值无关。</p>
+<p><img src="https://s1.ax1x.com/2020/05/24/YzyrSU.png"></p>
+<h5 id="D-因果图（测试方法）"><a href="#D-因果图（测试方法）" class="headerlink" title="D.因果图（测试方法）"></a><strong>D.因果图（测试方法）</strong></h5><p>因果图法是一种适合于描述对于多种输入条件组合的测试方法，根据输入条件的组合、约束关系和输出条件的因果关系，分析输入条件的各种组合情况，从而设计测试用例的方法，它适合于检查程序输入条件涉及的各种组合情况。因果图法一般和判定表结合使用，通过映射同时发生相互影响的多个输入来确定判定条件。因果图法最终生成的就是判定表，它适合于检查程序输入条件的各种组合情况。采用因果图法能帮助我们按照一定的步骤选择一组高效的测试用例，同时还能指出程序规范中存在什么问题，鉴别和制作因果图。<br>因果图法着重分析输入条件的各种组合，每种组合条件就是“因”，它必然有一个输出的结果，这就是“果”。</p>
+<p><strong>基本符号</strong></p>
+<p><img src="https://s1.ax1x.com/2020/05/24/YzcEbd.png"></p>
+<p><strong>约束符号</strong></p>
+<p><img src="https://s1.ax1x.com/2020/05/24/YzcLJP.png"></p>
+<p><strong>Example</strong></p>
+<p>有一个处理单价为5角钱的饮料的自动售货机软件测试用例的设计。其规格说明如下：若投入5角钱或1元钱的硬币，押下【橙汁】或【啤酒】的按钮，则相应的饮料就送出来。若售货机没有零钱找，则一个显示【零钱找完】的红灯亮，这时在投入1元硬币并押下按钮后，饮料不送出来而且1元硬币也退出来；若有零钱找，则显示【零钱找完】的红灯灭，在送出饮料的同时退还5角硬币。</p>
+<p>列出原因和结果<br>原因：<br>1.售货机有零钱找</p>
+<p>2.投入1元硬币</p>
+<p>3.投入5角硬币</p>
+<p>4.押下橙汁按钮</p>
+<p>5.押下啤酒按钮</p>
+<p>结果：<br>21.售货机【零钱找完】灯亮  </p>
+<p>22.退还1元硬币</p>
+<p>23.退还5角硬币  </p>
+<p>24.送出橙汁饮料</p>
+<p>25.送出啤酒饮料</p>
+<p>画出因果图，如图所示。所有原因结点列在左边，所有结果结点列在右边。建立中间结点，表示处理的中间状态。</p>
+<p>中间结点：</p>
+<p>11.投入1元硬币且押下饮料按钮</p>
+<p>12.押下〖橙汁〗或〖啤酒〗的按钮</p>
+<p>13.应当找5角零钱并且售货机有零钱找</p>
+<p>14.钱已付清</p>
+<p><img src="https://s1.ax1x.com/2020/05/24/Yzgjt1.png"></p>
+<h5 id="E-场景分析（测试方法）"><a href="#E-场景分析（测试方法）" class="headerlink" title="E.场景分析（测试方法）"></a><strong>E.场景分析（测试方法）</strong></h5><p>通过运用场景来对系统的功能点或业务流程的描述，从而提高测试效果的一种方法。用例场景来测试需求是指模拟特定场景边界发生的事情，通过事件来触发某个动作的发生，观察事件的最终结果，从而用来发现需求中存在的问题。我们通常以正常的用例场景分析开始，然后再着手其他的场景分析。场景法一般包含基本流和备用流，从一个流程开始，通过描述经过的路径来确定的过程，经过遍历所有的基本流和备用流来完成整个场景。场景主要包括4种主要的类型：<strong>正常的用例场景，备选的用例场景，异常的用例场景，假定推测的场景</strong>。</p>
+<p><img src="https://s1.ax1x.com/2020/05/24/YzRzLD.png"></p>
+<p><strong>Example</strong></p>
+<p>以ATM机取款为例</p>
+<p><img src="https://s1.ax1x.com/2020/05/24/YzWjts.png"></p>
+<p><img src="https://s1.ax1x.com/2020/05/24/Yzh1MV.png"></p>
+<h5 id="F-正交试验（测试方法）"><a href="#F-正交试验（测试方法）" class="headerlink" title="F.正交试验（测试方法）"></a><strong>F.正交试验（测试方法）</strong></h5><p>正交试验设计是研究多因素多水平的又一种设计方法，它是根据正交性从全面试验中挑选出部分有代表性的点进行试验，这些有代表性的点具备了“均匀分散，齐整可比”的特点，正交试验设计是分式析因设计的主要方法，是一种高效率、快速、经济的实验设计方法。</p>
+<p>1.提取功能说明，构造因子–状态表</p>
+<p>把影响实验指标的条件称为因子，而影响实验因子的条件叫因子的状态。利用正交实验设计方法来设计测试用例时，首先要根据被测试软件的规格说明书找出影响其功能实现的操作对象和外部因素，把他们当作因子（动作项），而把各个因子的取值（条件项）当作状态。对软件需求规格说明中的功能要求进行划分，把整体的概要性的功能要求进行层层分解与展开，分解成具体的有相对独立性的基本的功能要求。这样就可以把被测试软件中所有的因子都确定下来，并为确定个因子的权值提供参考的依据。确定因子与状态是设计测试用例的关键，因此要求尽可能全面的正确的确定取值，以确保测试用例的设计作到完整与有效。</p>
+<p>2.加权筛选，生成因素分析表</p>
+<p>对因子与状态的选择可按其重要程度分别加权，可根据各个因子及状态的作用大小，出现频率的大小以及测试的需要，确定权值的大小。</p>
+<p>3.利用正交表构造测试数据集</p>
+<p>正交表的推导依据Galois理论，利用正交实验设计方法设计测试用例，比使用等价类划分，边界值分析，因果图等方法有以下优点：①.节省测试工作工时；②.可控制生成的测试用例数量；③.测试用例具有一定的覆盖率。</p>
+<p><img src="https://s1.ax1x.com/2020/05/24/YzHhtO.jpg"></p>
+<h5 id="G-功能图分析（测试方法）"><a href="#G-功能图分析（测试方法）" class="headerlink" title="G.功能图分析（测试方法）"></a><strong>G.功能图分析（测试方法）</strong></h5><p>一个程序的功能说明通常由动态说明和静态说明组成，动态说明描述了输入数据的次序或转移的次序。静态说明描述了输入条件与输出条件之间的对应关系，对于较复杂的程序，由于存在大量的组合情况。因此仅用静态说明组成的规格说明对于测试来说往往是不够的，必须用动态说明来补充功能说明。功能图方法是用功能图FD形式化地表示程序的功能说明，并机械地生成功能图的测试用例。功能图模型由状态迁移图和逻辑功能模型构成，状态迁移图用于表示输入数据序列以及相应的输出数据。在状态迁移图中，由输入数据和当前状态决定输出数据和后续状态。逻辑功能模型用于表示在状态中输入条件和输出条件之间的对应关系。逻辑功能模型只适合于描述静态说明，输出数据仅由输入数据决定。测试用例则是由测试中经过的一系列状态和在每个状态中必须依靠输入&#x2F;输出数据满足的一对条件组成。功能图方法其实是是一种黑盒白盒混合用例设计方法。</p>
+<p>功能图由状态迁移图和布尔函数组成，状态迁移图用状态和迁移来描述。一个状态指出数据输入的位置（或时间），而迁移则指明状态的改变，同时要依靠判定表或因果图表示的逻辑功能，由于在实操过程中更多接触的状态迁移图，故布尔函数渐渐被淡忘，功能图分析久而久之被渐渐直接说成状态迁移图。</p>
+<h4 id="2-白盒测试（测试技术分类）-1"><a href="#2-白盒测试（测试技术分类）-1" class="headerlink" title="2.白盒测试（测试技术分类）"></a><strong>2.白盒测试（测试技术分类）</strong></h4><h5 id="A-静态分析（测试方法）"><a href="#A-静态分析（测试方法）" class="headerlink" title="A.静态分析（测试方法）"></a><strong>A.静态分析（测试方法）</strong></h5><h6 id="a-控制流分析"><a href="#a-控制流分析" class="headerlink" title="a.控制流分析"></a><strong>a.控制流分析</strong></h6><p>控制流分析，是一种确认程序控制流程的静态代码分析技术，控制流程会以控制流图来表示。对于函数编程语言及面向对象程式设计，控制流分析都是指计算控制流程的算法。</p>
+<h6 id="b-数据流分析"><a href="#b-数据流分析" class="headerlink" title="b.数据流分析"></a><strong>b.数据流分析</strong></h6><p>数据流分析是一项编译时使用的技术，它能从程序代码中收集程序的语义信息，并通过代数的方法在编译时确定变量的定义和使用。通过数据流分析，可以不必实际运行程序就能够发现程序运行时的行为，这样可以帮助大家理解程序。数据流分析被用于解决编译优化、程序验证、调试、测试、并行、向量化和片行编程环境等问题。</p>
+<h6 id="c-信息流分析"><a href="#c-信息流分析" class="headerlink" title="c.信息流分析"></a><strong>c.信息流分析</strong></h6><p>信息流分析主要用在验证程序变量间信息的传输遵循保密要求，其主要分析输出值跟输入值之间的影响关系。</p>
+<h5 id="B-动态分析（测试方法）"><a href="#B-动态分析（测试方法）" class="headerlink" title="B.动态分析（测试方法）"></a><strong>B.动态分析（测试方法）</strong></h5><p><strong>Example</strong></p>
+<p>先理解一下名词各自的示范样本</p>
+<p><img src="https://s1.ax1x.com/2020/05/24/tS3SGq.png"></p>
+<p><img src="https://s1.ax1x.com/2020/05/24/tS3EdJ.png"></p>
+<h6 id="a-语句覆盖"><a href="#a-语句覆盖" class="headerlink" title="a.语句覆盖"></a><strong>a.语句覆盖</strong></h6><p>设计一套测试让被测对象中每条语句至少执行一次 </p>
+<p><img src="https://s1.ax1x.com/2020/05/24/tSU09H.jpg"></p>
+<p>使用此准则测试程序，只需要遍历路径ace，便将程序中的所有语句便都执行了一次。生成的用例及其遍历路径如下：</p>
+<blockquote>
+<p>A&#x3D;2，B&#x3D;0，X&#x3D;4               <em><code>ace</code></em></p>
+</blockquote>
+<p><strong>缺点：语句覆盖是“最弱的覆盖”，它难以发现程序中的错误。</strong></p>
+<p><strong>①程序中存在一条x的值未发生改变的路径abd没有测试。</strong></p>
+<p><strong>②它无法发现判定的错误，比如第一个判定条件也许应该是“或”，而不是“与”。</strong></p>
+<p><strong>③无法发现条件的错误，比如第二个判断中的条件X&gt;1，也许事实上应该是X&gt;0。</strong></p>
+<h6 id="b-判定覆盖（分支覆盖）"><a href="#b-判定覆盖（分支覆盖）" class="headerlink" title="b.判定覆盖（分支覆盖）"></a><strong>b.判定覆盖（分支覆盖）</strong></h6><p>设计一套测试让被测对象中每个判定的所有可能结果至少出现一次</p>
+<p><img src="https://s1.ax1x.com/2020/05/24/tSU09H.jpg"></p>
+<p>使用此准则测试程序，只需要涵盖路径ace和abd，或涵盖路径acd和abe，就可以使得两个判定为“真”和为“假”的分支都执行一次。如果选择后一种情况，生成的用例及其遍历的路径如下：</p>
+<blockquote>
+<p>A&#x3D;3，B&#x3D;0，X&#x3D;3                <em><code>acd</code></em><br>A&#x3D;2，B&#x3D;1，X&#x3D;1                <em><code>abe</code></em></p>
+</blockquote>
+<p>我们仅有50%的可能性遍历到X值未发生改变的路径，即，只有我们选择涵盖路径ace和abd的情况，而不是涵盖路径acd和abe时。对应的测试用例如下：</p>
+<blockquote>
+<p>A&#x3D;2，B&#x3D;0，X&#x3D;2                <em><code>ace</code></em><br>A&#x3D;3，B&#x3D;1，X&#x3D;1                <em><code>abd</code></em></p>
+</blockquote>
+<p><strong>缺点：这两组测试用例都存在同一个问题：当判定由多个条件组合构成时，它未必能发现每个条件的错误。如果第二个判定把条件X&gt;1错误的写成了X&lt;1，我们设计的测试用例仍然无法找出这个错误。</strong></p>
+<h6 id="c-条件覆盖"><a href="#c-条件覆盖" class="headerlink" title="c.条件覆盖"></a><strong>c.条件覆盖</strong></h6><p>设计一套测试让被测对象中每个条件的所有可能结果至少执行一次</p>
+<p><img src="https://s1.ax1x.com/2020/05/24/tSU09H.jpg"></p>
+<p>第一个判断的所有条件的可能取值情况是A&gt;1或A≤1，B&#x3D;0或B≠0。</p>
+<p>第二个判断的所有条件可能的取值情况为A&#x3D;2或A≠2，X&gt;1或X≤1。</p>
+<p>生成的用例及其遍历的路径如下所示：</p>
+<blockquote>
+<p>A&#x3D;1，B&#x3D;0，X&#x3D;3                <em><code>abe</code></em><br>A&#x3D;2，B&#x3D;1，X&#x3D;1                <em><code>abe</code></em></p>
+</blockquote>
+<p><strong>缺点：条件覆盖并不一定总能覆盖全部分支。测试用例虽然满足了条件覆盖准则，但是只涵盖了程序的路径abe。但是，条件覆盖还是要比判定覆盖强一些，因为条件覆盖可能会使判断中各个条件的结果都取“真”或着取“假”，而判定覆盖却做不到这一点。</strong></p>
+<h6 id="d-判定-条件覆盖"><a href="#d-判定-条件覆盖" class="headerlink" title="d.判定&#x2F;条件覆盖"></a><strong>d.判定&#x2F;条件覆盖</strong></h6><p>设计一套测试让被测对象一个判定中的每个条件的所有可能结果至少执行一次，并且每个判断本身的所有可能结果至少执行一次</p>
+<p><img src="https://s1.ax1x.com/2020/05/24/tSU09H.jpg"></p>
+<p>判定&#x2F;条件覆盖，既要考虑到单个判定中每个条件的可能情况（A&gt;1或A≤1，B&#x3D;0或B≠0，A&#x3D;2或A≠2，X&gt;1或X≤1），也要考虑到每个判定的可能情况（路径ace和abd，或路径acd和abe）。用例及其遍历的路径如下所示：</p>
+<blockquote>
+<p>A&#x3D;2，B&#x3D;0，X&#x3D;4                <em><code>ace</code></em><br>A&#x3D;1，B&#x3D;1，X&#x3D;1                <em><code>abd</code></em></p>
+</blockquote>
+<p><strong>缺点：条件覆盖和判定&#x2F;条件覆盖不一定会发现逻辑表达式中的错误。尽管看上去所有条件的所有结果似乎都执行到了，但由于有些条件会屏蔽掉后面的条件，并不一定能全部执行得到，例如上述</strong></p>
+<p><strong>测试用例①满足了条件A&#x3D;2后，就不再执行对条件X&gt;1的判断；</strong></p>
+<p><strong>测试用例②中不满足条件A&gt;1后，就不再执行对条件B&#x3D;0的判断。</strong></p>
+<h6 id="e-多重条件覆盖（组合覆盖）"><a href="#e-多重条件覆盖（组合覆盖）" class="headerlink" title="e.多重条件覆盖（组合覆盖）"></a><strong>e.多重条件覆盖（组合覆盖）</strong></h6><p>设计一套测试让被测对象中每个判定中的所有可能的条件结果的组合，以及所有的入口点都至少执行一次。（注意“可能”二字，因为有些组合的情况难以生成，根据实际情况而定）</p>
+<p><img src="https://s1.ax1x.com/2020/05/24/tSU09H.jpg"></p>
+<p>满足多重条件覆盖准则的测试用例，必须覆盖以下8种组合：</p>
+<table>
+<thead>
+<tr>
+<th>第一个判定的取值情况</th>
+<th>第二个判定的取值情况</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1. A&gt;1，B&#x3D;0</td>
+<td>5. A&#x3D;2，X&gt;1</td>
+</tr>
+<tr>
+<td>2. A&gt;1，B≠0</td>
+<td>6. A&#x3D;2，X≤1</td>
+</tr>
+<tr>
+<td>3. A≤1，B&#x3D;0</td>
+<td>7. A≠2，X&gt;1</td>
+</tr>
+<tr>
+<td>4. A≤1，B≠0</td>
+<td>8. A≠2，X≤1</td>
+</tr>
+</tbody></table>
+<p>生成的测试用例，以及它们遍历的路径和覆盖的组合如下：</p>
+<blockquote>
+<p>A&#x3D;2，B&#x3D;0，X&#x3D;4            <em><code>ace</code></em>    覆盖组合1，5<br>A&#x3D;2，B&#x3D;1，X&#x3D;1            <em><code>abe</code></em>    覆盖组合2，6<br>A&#x3D;1，B&#x3D;0，X&#x3D;2            <em><code>abe</code></em>    覆盖组合3，7<br>A&#x3D;1，B&#x3D;1，X&#x3D;1            <em><code>abd</code></em>    覆盖组合4，8</p>
+</blockquote>
+<p><strong>缺点：多重条件覆盖不一定能覆盖到每条路径，路径acd就被遗漏掉了。</strong></p>
+<h6 id="f-路径覆盖"><a href="#f-路径覆盖" class="headerlink" title="f.路径覆盖"></a><strong>f.路径覆盖</strong></h6><p><img src="https://s1.ax1x.com/2020/05/24/tSdVoT.jpg"></p>
+<p><strong>方法一</strong>：我们通常采用控制流图的边（弧）序列和节点序列表示某一条具体路径。<br>             （1）弧a和弧b相乘，表示为ab，它表明路径是先经历弧a，接着再经历弧b。<br>             （2）弧a和弧b相加，表示为a+b，它表明两条弧是“或”的关系，是并行的路段。<br>在路径表达式中，将所有弧均以数值1来代替，再进行表达式的相乘和相加运算，最后得到的数值即为该程序的 独立路径数 &#x3D; （1+1×1）×（1+1×1）&#x3D; 2×2 &#x3D; 4。</p>
+<p><strong>方法二</strong>：与弧的计算方式类似，还可以通过必经节点个数 i，再找出必经节点下的路径数 w(i) ，计算路径数。流程图中共有2个必经节点②⑥，且先经历②再经历⑥，没有并行的独立节点，独立路径数 &#x3D; w(1)*…<em>w(i) &#x3D; 2</em>2 &#x3D; 4。</p>
+<p>两种方法计算得到的路径数均为4条，它们分别覆盖了abd、abe、acd、ace：</p>
+<blockquote>
+<p>A&#x3D;1，B&#x3D;0，X&#x3D;1            <em><code>abd</code></em><br>A&#x3D;1，B&#x3D;0，X&#x3D;2            <em><code>abe</code></em><br>A&#x3D;3，B&#x3D;0，X&#x3D;1            <em><code>acd</code></em><br>A&#x3D;2，B&#x3D;0，X&#x3D;3            <em><code>ace</code></em></p>
+</blockquote>
+<p><strong>缺点：（1）路径覆盖无法发现程序不符合设计规范的错误（需要借助于黑盒测试的外部规格说明书）</strong></p>
+<p><strong>比如：①.不一定发现路径本身的错误（缺一条或多一条路径）；②.可能不会暴露数据敏感的错误（比如计算两数之差小于某个值，如果程序实现的是a-b&lt;c，而不是|a-b|&lt;c，那么当b-a&gt;c时则无法发现程序的逻辑错误）,所以建议先使用黑盒方法设计测试用例，再使用白盒方法对用例进行补充。</strong></p>
+<p><strong>（2）路径覆盖不一定把所有的条件组合情况都覆盖。以上测试用例尽管从表面上看已经满足路径覆盖，可是却无法发现程序当条件语句中的B&#x3D;0误写为B&gt;&#x3D;0时的错误，即没有对B≠0的情况进行测试。另外，第4个用例中由于A&#x3D;2，第二个判定中的X&gt;1条件被忽略，虽然覆盖了路径abd，却无法发现X&gt;1误写为X&gt;2时的错误，即没有对覆盖ace路径时X&gt;1的情况进行测试。</strong></p>
+<p><strong>（3）复杂程序的用例数呈指数级上升。假设一段程序有10条判断语句，则i&#x3D;10， w(i)&#x3D;2，独立路径数为2的10次方，即1024，则要为它设计1024个测试用例。</strong></p>
+<h6 id="g-完整路径覆盖"><a href="#g-完整路径覆盖" class="headerlink" title="g.完整路径覆盖"></a><strong>g.完整路径覆盖</strong></h6><p>设计一套测试让被测对象中每条路径至少执行一次</p>
+<p><img src="https://s1.ax1x.com/2020/05/24/tS0FaV.png"></p>
+<p>完全路径即所有独立路径的集合；非完全路径，即所有独立路径集合的真子集。前面列出的独立路径集合并非完全路径，因为前面的流程图中含有隐含路径。</p>
+<p>因此，如果判断中的条件表达式是由一个或多个逻辑运算符 (OR, AND, NAND, NOR)连接的复合条件表达式，则需要改为一系列只有单条件的嵌套的判断。细化后不含隐含路径的控制流图和流程图如上。</p>
+<p>独立路径数 &#x3D; (1+1×1+1×1)×(1×1+1×1×1+1×1) &#x3D; 3×3 &#x3D; 9.或者必经节点有两个（节点2.1和节点6.1），独立路径数 &#x3D; w(1)×w(2) &#x3D; 3×3 &#x3D; 9。</p>
+<blockquote>
+<p> 路径一：2.1→6.1→6.2→8<br> 路径二：2.1→6.1→6.2→7→8<br> 路径三：2.1→6.1→7→8<br> 路径四：2.1→2.2→6.1→6.2→8<br> 路径五：2.1→2.2→6.1→6.2→7→8<br> 路径六：2.1→2.2→6.1→7→8<br> 路径七：2.1→2.2→3→6.1→6.2→8<br> 路径八：2.1→2.2→3→6.1→6.2→7→8<br> 路径九：2.1→2.2→3→6.1→7→8</p>
+</blockquote>
+<p>由此，要达到完全路径覆盖就需要设计9个测试用例，去掉不可能的情况路径三（因为A不可能同时满足A≤1，A&#x3D;2两个条件），仍然有8个用例。尽管在消除隐藏条件后解决了路径覆盖中的问题（2），但是完全路径覆盖的测试量比之前更加庞大。</p>
+<h6 id="h-基本路径覆盖"><a href="#h-基本路径覆盖" class="headerlink" title="h.基本路径覆盖"></a><strong>h.基本路径覆盖</strong></h6><p>设计一套测试根据流图计算环复杂度，得到基本路径覆盖的用例数</p>
+<p><img src="https://s1.ax1x.com/2020/05/24/tSD48U.jpg"></p>
+<table>
+<thead>
+<tr>
+<th>计算圈复杂度的三种公式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>V(G) &#x3D; e - n + 2</td>
+<td>e为边数，n为节点个数</td>
+</tr>
+<tr>
+<td>V(G)&#x3D;P+1</td>
+<td>P为判定节点的个数</td>
+</tr>
+<tr>
+<td>V(G)&#x3D;区域数</td>
+<td>闭合区域+开放区域</td>
+</tr>
+</tbody></table>
+<p>V(G) &#x3D; 6-5+2 &#x3D; 3<br>V(G) &#x3D; 2+1 &#x3D; 3<br>V(G) &#x3D; 2个闭合区域+1个开放区域 &#x3D; 3<br>无论使用哪种方法计算，都可确定3条独立的路径，即基本路径覆盖的用例数。</p>
+<blockquote>
+<p> 路径一：②⑥⑧，测试数据A&#x3D;1，B&#x3D;0，X&#x3D;1      <code>abd</code><br> 路径二：②③⑥⑧，测试数据A&#x3D;3，B&#x3D;0，X&#x3D;1  <code>acd</code><br> 路径三：②⑥⑦⑧，测试数据A&#x3D;1，B&#x3D;0，X&#x3D;2  <code>abe</code></p>
+</blockquote>
+<p><strong>思考</strong>：为什么②⑥⑧，②③⑥⑦⑧两个用例就可以将从②到⑧的路径全部覆盖，基本路径覆盖计算的结果还需要三个用例？我个人理解的原因是基本路径覆盖的一个测试用例一次只有一个变量因子。比如路径二相对路径一只有节点③发生了改变，路径三相对路径一只有节点⑦发生了改变。而如果只有②⑥⑧，②③⑥⑦⑧两个用例，虽然覆盖到了全部路径，但一次有两个因子③和⑦都发生了变化，无法对单个条件变化的测试结果进行比对。消除隐藏路径后的流程图如下：</p>
+<p><img src="https://s1.ax1x.com/2020/05/24/tSrEPf.png"></p>
+<p>V(G) &#x3D; 10-7+2 &#x3D; 5<br>V(G) &#x3D; 4+1 &#x3D; 5<br>V(G) &#x3D; 4个闭合区域+1个开放区域 &#x3D; 5<br>无论使用哪种方法计算，都可确定5条独立的路径，即基本路径覆盖的用例数。</p>
+<blockquote>
+<p> 路径一：2.1→6.1→6.2→8，测试数据A&#x3D;1，B&#x3D;0，X&#x3D;1  <code>abid</code><br> 路径二：2.1→2.2→6.1→6.2→8，测试数据A&#x3D;3，B&#x3D;1，X&#x3D;1  <code>afgid</code><br> 路径三：2.1→2.2→3→6.1→6.2→8，测试数据A&#x3D;3，B&#x3D;0，X&#x3D;1  <code>afchid</code><br> 路径四：2.1→6.1→7→8，测试数据*<strong>A&#x3D;？，B&#x3D;？，X&#x3D;？*</strong>  <code>abek</code><br> 路径五：2.1→6.1→6.2→7→8，测试数据A&#x3D;1，B&#x3D;0，X&#x3D;2  <code>abijk</code></p>
+</blockquote>
+<p>设计测试数据时发现“路径四”<code>abek</code>不可能存在（因为A不可能同时满足A≤1，A&#x3D;2两个条件），根据实际情况调整路径为<code>afgek</code>，对应的测试数据为A&#x3D;2，B&#x3D;1，X&#x3D;1。</p>
+<p><strong>缺点：尽管基本路径覆盖用例已经比完全路径覆盖的用例少了许多，但是当语句中有很多线性判定条件时，仍然无法解决测试量指数上升的问题。</strong></p>
+<h6 id="i-分割后的完全路径覆盖"><a href="#i-分割后的完全路径覆盖" class="headerlink" title="i.分割后的完全路径覆盖"></a><strong>i.分割后的完全路径覆盖</strong></h6><p>设计一套测试让被测对象中每条路径至少执行一次，每个条件的所有可能结果至少执行一次</p>
+<p>如果消除隐藏路径后，将程序在必经节点处割断，分别对每一段程序进行完全路径覆盖的充分测试，则即达到了完全路径覆盖的目的，又能对必经节点中的每个条件都进行考量，还大大减少了测试用例量。分割后的控制流图和流程图如下：</p>
+<p><img src="https://s1.ax1x.com/2020/05/24/tSrXes.png"></p>
+<table>
+<thead>
+<tr>
+<th>第一段程序的取值情况</th>
+<th>第二段程序的取值情况</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A≤1，B&#x3D;任意值，X&#x3D;任意值            <em><code>ab</code></em></td>
+<td>A≠2，X≤1            <em><code>oid</code></em></td>
+</tr>
+<tr>
+<td>A&gt;1，B≠0，X&#x3D;任意值            <em><code>afg</code></em></td>
+<td>A&#x3D;2，X&#x3D;任意值            <em><code>oek</code></em></td>
+</tr>
+<tr>
+<td>A&gt;1，B&#x3D;0，X&#x3D;任意值            <em><code>afch</code></em></td>
+<td>A≠2，X&gt;1            <em><code>oijk</code></em></td>
+</tr>
+</tbody></table>
+<p>综合以上条件，得到测试用例如下：</p>
+<blockquote>
+<p> A&#x3D;1，B&#x3D;0，X&#x3D;1            <em><code>aboid</code></em>            输出：A&#x3D;1，B&#x3D;0，X&#x3D;1<br> A&#x3D;2，B&#x3D;1，X&#x3D;1            <em><code>afgoek</code></em>            输出：A&#x3D;1，B&#x3D;0，X&#x3D;2<br> A&#x3D;3，B&#x3D;0，X&#x3D;6            <em><code>afchoijk</code></em>            输出：A&#x3D;1，B&#x3D;0，X&#x3D;2</p>
+</blockquote>
+<p>最终得到的用例数为3，比程序被分割之前的所需用例数少了很多，缓解了测试量过大的问题；另一方面，针对两个程序片段实现了完全路径覆盖，解决了测试不足的问题。前面所提到的不一定覆盖所有条件组合情况下的BUG（未测试到的B≠0，X&gt;1的情况，即将B&#x3D;0误写为B&gt;&#x3D;0，X&gt;1误写为X&gt;2的错误），将会被测试用例2和测试用例3发现。</p>
+<p><strong>优点：分割后的完全路径覆盖方法，解决了前面所说的第（2)、(3）问题，不仅对条件语句的每种情况都进行了考量，还防止了测试用例呈指数级上升的可能，解决了测试不足和测试量过大之间的矛盾。</strong></p>
+<p><strong>基本路径覆盖和分割后的完全路径覆盖用例对比</strong></p>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>A</th>
+<th>B</th>
+<th>X</th>
+<th>路径</th>
+<th>编号</th>
+<th>A</th>
+<th>B</th>
+<th>X</th>
+<th>路径</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>(1)</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td><code>abid</code></td>
+<td>(1)</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td><code>abid</code></td>
+</tr>
+<tr>
+<td>(2)</td>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+<td><code>afgid</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>(3)</td>
+<td>3</td>
+<td>0</td>
+<td>1</td>
+<td><code>afchid</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>(4)</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td><code>afgek</code></td>
+<td>(2)</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td><code>afgek</code></td>
+</tr>
+<tr>
+<td>(5)</td>
+<td>1</td>
+<td>0</td>
+<td>2</td>
+<td><code>abijk</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>(3)</td>
+<td>3</td>
+<td>0</td>
+<td>6</td>
+<td><code>afchijk</code></td>
+</tr>
+</tbody></table>
+<ul>
+<li>基本路径用例(2)测试的是A&gt;1，B≠0，X≤1的情况，在分割后的完全路径覆盖用例(2)中覆盖了A&gt;1，B≠0的情况，在分割后的完全路径覆盖用例(1)中覆盖了X≤1的情况。</li>
+<li>基本路径用例(3)测试的是A&gt;1，B&#x3D;0，X≤1的情况，在分割后的完全路径覆盖用例(3)中覆盖了A&gt;1，B&#x3D;0的情况，在分割后的完全路径覆盖用例(1)中覆盖了X≤1的情况。</li>
+<li>基本路径用例(5)测试的是A≤1，B值忽略，X&gt;1的情况，在分割后的完全路径覆盖用例(1)中覆盖了A≤1，B值忽略，在分割后的完全路径覆盖用例(3)中覆盖了X&gt;1的情况。</li>
+</ul>
+<p><strong>结论</strong>：基本路径覆盖对比起分割后的完全路径覆盖方法，后者不但实现了路径覆盖，还考虑到了条件语句的每种情况，并且用例数比基本路径覆盖更为精简，解决了完全路径覆盖和基本路径覆盖中复杂程序用例呈指数级上升的问题。</p>
+<p><strong>说明：</strong></p>
+<p><strong>1.覆盖程度由高到低依次是：路径覆盖 &gt; 多重条件覆盖 &gt; 判定&#x2F;条件覆盖 &gt; 条件覆盖 &gt; 判定覆盖 &gt; 语句覆盖</strong></p>
+<p><strong>2.满足多重条件覆盖准则的测试用例集，同样满足判定覆盖准则、条件覆盖准则和判定&#x2F;条件覆盖准则</strong></p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://blog.19950628.xyz/2020/05/24/ISTQB%20CTFL%E8%AF%81%E4%B9%A6%E8%80%83%E8%AF%95%E4%B9%8B%E6%B5%8B%E8%AF%95%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2020/05/25/ISTQB%20CTFL%E8%AF%81%E4%B9%A6%E8%80%83%E8%AF%95%E4%B9%8B%E6%B5%8B%E8%AF%95%E7%AE%A1%E7%90%86%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89/" class="article-nav-link">
+        <strong class="article-nav-caption">啵一下</strong>
+        <div class="article-nav-title">
+          
+            ISTQB CTFL证书考试之测试管理笔记（五）
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/05/21/ISTQB%20CTFL%E8%AF%81%E4%B9%A6%E8%80%83%E8%AF%95%E4%B9%8B%E9%9D%99%E6%80%81%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/" class="article-nav-link">
+        <strong class="article-nav-caption">嗦一下</strong>
+        <div class="article-nav-title">ISTQB CTFL证书考试之静态测试基础笔记（三）</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "r61P8KWT0BM9tk4gcpvkU7Sj-gzGzoHsz",
+    app_key: "4B5bpFWfrdrirbx8gmFEBFDn",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2019-2024
+        <i class="ri-heart-fill heart_icon"></i> Carrol Chen
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+
+<span id="sitetime"></span>
+  <script language=javascript>
+    function siteTime(){
+      window.setTimeout("siteTime()", 1000);
+        var seconds = 1000
+        var minutes = seconds * 60
+        var hours = minutes * 60
+        var days = hours * 24
+        var years = days * 365
+        var today = new Date()
+        var todayYear = today.getFullYear()
+        var todayMonth = today.getMonth()
+        var todayDate = today.getDate()
+        var todayHour = today.getHours()
+        var todayMinute = today.getMinutes()
+        var todaySecond = today.getSeconds()
+
+/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+year - 作为date对象的年份，为4位年份值
+month - 0-11之间的整数，做为date对象的月份
+day - 1-31之间的整数，做为date对象的天数
+hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+minutes - 0-59之间的整数，做为date对象的分钟数
+seconds - 0-59之间的整数，做为date对象的秒数
+microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2019,6,28,12,00,00)
+        var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond)
+        var diff = t2-t1
+
+        var diffYears = Math.floor(diff/years)
+        var diffDays = Math.floor((diff/days)-diffYears*365)
+        var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours)
+        var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes)
+        var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds)
+        document.getElementById("sitetime").innerHTML=`<div style="text-align:center">本站已运行${diffYears}年${diffDays}天${diffHours}时${+diffMinutes}分${diffSeconds}秒</div>`
+        }
+    siteTime()
+  </script>
+    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.jpg" alt="CarrolChen&#39;s Blogs"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/psychology">心理学</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/management">管理学</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/love">婚姻观</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/education">教育观</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/life">碎生活</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://synology-ds3617xs-picture.kooldns.cn:443">单反仔</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/router">Router | NAS</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://synology-ds3617xs.kooldns.cn:443">私有云(NAS)</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/software-testing">编程测试</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/playlist">音乐单</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+ 
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+ 
+<script src="/js/dz.js"></script>
+ 
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="52"
+        src="//music.163.com/outchain/player?type=2&id=468176711&auto=0&height=32"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
+    
+    
+
+  </div>
+</body>
+
+</html>

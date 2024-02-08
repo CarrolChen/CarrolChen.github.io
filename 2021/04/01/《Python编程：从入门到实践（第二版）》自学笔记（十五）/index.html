@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta name="description" content="始终努力奔跑在搏取机会路上的乡巴佬" />
+      
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>《Python编程：从入门到实践（第二版）》自学笔记（十五） |  CarrolChen&#39;s Blogs</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.jpg" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="CarrolChen's Blogs" type="application/atom+xml">
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-《Python编程：从入门到实践（第二版）》自学笔记（十五）"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  《Python编程：从入门到实践（第二版）》自学笔记（十五）
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/04/01/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%BA%94%EF%BC%89/" class="article-date">
+  <time datetime="2021-03-31T16:00:00.000Z" itemprop="datePublished">2021-04-01</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/software-testing/">software testing</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.5k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">6 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  
+    <div id="aplayer-xkBstxxx" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="415191926" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
+    ></div>
+
+<h3 id="一、向函数传递列表"><a href="#一、向函数传递列表" class="headerlink" title="一、向函数传递列表"></a><strong>一、向函数传递列表</strong></h3><p>将列表传递给函数后，带来的好处是：函数可以直接访问列表中的内容，提高函数处理列表的效率</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def greet_users(names):</span><br><span class="line">	&quot;&quot;&quot;向列表中的每位用户发出简单的问候。&quot;&quot;&quot;</span><br><span class="line">	for name in names:</span><br><span class="line">		msg = f&quot;Hello, &#123;name.title()&#125;!&quot;</span><br><span class="line">		print(msg)</span><br><span class="line">usernames = [&#x27;hannah&#x27;, &#x27;ty&#x27;, &#x27;margot&#x27;]</span><br><span class="line">greet_users(usernames)</span><br><span class="line">输出：</span><br><span class="line">Hello, Hannah!</span><br><span class="line">Hello, Ty!</span><br><span class="line">Hello, Margot!</span><br></pre></td></tr></table></figure>
+
+<p>在之前单独接触列表时，曾涉及到列表中的元素是可以直接进行修改的，同样的在这里函数中列表也是可以修改的，两者是通的，需要注意的是：函数对列表作出的任何修改都是永久性的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">##以下代码块是未使用函数实现的，未使用函数，未使用函数！！！</span><br><span class="line"></span><br><span class="line"># 首先创建一个列表，其中包含一些要打印的设计。</span><br><span class="line">unprinted_designs = [&#x27;phone case&#x27;, &#x27;robot pendant&#x27;, &#x27;dodecahedron&#x27;]</span><br><span class="line">completed_models = []</span><br><span class="line"># 模拟打印每个设计，直到没有未打印的设计为止。</span><br><span class="line"># 打印每个设计后，都将其移到列表completed_models中。</span><br><span class="line">while unprinted_designs:</span><br><span class="line">	current_design = unprinted_designs.pop()</span><br><span class="line">	print(f&quot;Printing model: &#123;current_design&#125;&quot;)</span><br><span class="line">	completed_models.append(current_design)</span><br><span class="line"># 显示打印好的所有模型。</span><br><span class="line">print(&quot;\nThe following models have been printed:&quot;)</span><br><span class="line">for completed_model in completed_models:</span><br><span class="line">	print(completed_model)</span><br><span class="line">输出：</span><br><span class="line">Printing model: dodecahedron</span><br><span class="line">Printing model: robot pendan</span><br><span class="line">Printing model: phone case</span><br><span class="line"></span><br><span class="line">The following models have been printed:</span><br><span class="line">dodecahedron</span><br><span class="line">robot pendant</span><br><span class="line">phone case</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">##以下代码块是使用函数实现的，使用函数，使用函数！！！</span><br><span class="line">def print_models(unprinted_designs, completed_models):</span><br><span class="line">	&quot;&quot;&quot;</span><br><span class="line">	模拟打印每个设计，直到没有未打印的设计为止。 </span><br><span class="line">	打印每个设计后，都将其移到列表completed_models中。</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    while unprinted_designs:</span><br><span class="line">    current_design = unprinted_designs.pop()</span><br><span class="line">    print(f&quot;Printing model: &#123;current_design&#125;&quot;)</span><br><span class="line">    completed_models.append(current_design)</span><br><span class="line">def show_completed_models(completed_models):</span><br><span class="line">	&quot;&quot;&quot;显示打印好的所有模型。&quot;&quot;&quot;</span><br><span class="line">	print(&quot;\nThe following models have been printed:&quot;)</span><br><span class="line">	for completed_model in completed_models:</span><br><span class="line">		print(completed_model)</span><br><span class="line">unprinted_designs = [&#x27;phone case&#x27;, &#x27;robot pendant&#x27;, &#x27;dodecahedron&#x27;]</span><br><span class="line">completed_models = []</span><br><span class="line">print_models(unprinted_designs, completed_models)</span><br><span class="line">show_completed_models(completed_models)</span><br><span class="line">输出：</span><br><span class="line">Printing model: dodecahedron</span><br><span class="line">Printing model: robot pendan</span><br><span class="line">Printing model: phone case</span><br><span class="line"></span><br><span class="line">The following models have been printed:</span><br><span class="line">dodecahedron</span><br><span class="line">robot pendant</span><br><span class="line">phone case</span><br></pre></td></tr></table></figure>
+
+<p>但是由于函数对列表的修改是永久性的，无法保证原列表不受影响，所以这里引入了之前所提到的切片副本的概念，即向函数传递的非源列表，而是源列表的副本，这样函数修改的列表即为列表的副本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">##以下代码块是使用函数及列表切片副本实现的，使用函数及列表切片副本，使用函数及列表切片副本！！！</span><br><span class="line">def print_models(unprinted_designs[:],, completed_models):</span><br><span class="line">	&quot;&quot;&quot;</span><br><span class="line">	模拟打印每个设计，直到没有未打印的设计为止。 </span><br><span class="line">	打印每个设计后，都将其移到列表completed_models中。</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    while unprinted_designs:</span><br><span class="line">    current_design = unprinted_designs.pop()</span><br><span class="line">    print(f&quot;Printing model: &#123;current_design&#125;&quot;)</span><br><span class="line">    completed_models.append(current_design)</span><br><span class="line">def show_completed_models(completed_models):</span><br><span class="line">	&quot;&quot;&quot;显示打印好的所有模型。&quot;&quot;&quot;</span><br><span class="line">	print(&quot;\nThe following models have been printed:&quot;)</span><br><span class="line">	for completed_model in completed_models:</span><br><span class="line">		print(completed_model)</span><br><span class="line">unprinted_designs = [&#x27;phone case&#x27;, &#x27;robot pendant&#x27;, &#x27;dodecahedron&#x27;]</span><br><span class="line">completed_models = []</span><br><span class="line">print_models(unprinted_designs, completed_models)</span><br><span class="line">show_completed_models(completed_models)</span><br><span class="line">输出：</span><br><span class="line">Printing model: dodecahedron</span><br><span class="line">Printing model: robot pendan</span><br><span class="line">Printing model: phone case</span><br><span class="line"></span><br><span class="line">The following models have been printed:</span><br><span class="line">dodecahedron</span><br><span class="line">robot pendant</span><br><span class="line">phone case</span><br></pre></td></tr></table></figure>
+
+<h3 id="二、传递任意数量的实参"><a href="#二、传递任意数量的实参" class="headerlink" title="二、传递任意数量的实参"></a><strong>二、传递任意数量的实参</strong></h3><p>其实向函数传递任意数量的实参，书中把它看做向函数传递元组，元组里包含多个元素。因为有时候，预先不知道函数需要接受多少个实参，但在Python是允许函数从调用语句中收集任意数量的实参的，而在我自己理解的是：向函数传递列表，因为列表和元组很相似，最根本的区别是：列表中的元素是可以修改的，而元组中的元素是不可以修改的。然而我们去向形参传递实参的时候，实参的元素本就是一个可变的过程</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def make_pizza(*toppings):</span><br><span class="line">	&quot;&quot;&quot;打印顾客点的所有配料。&quot;&quot;&quot;</span><br><span class="line">	print(toppings)</span><br><span class="line">make_pizza(&#x27;pepperoni&#x27;)</span><br><span class="line">make_pizza(&#x27;mushrooms&#x27;, &#x27;green peppers&#x27;, &#x27;extra cheese&#x27;)</span><br><span class="line">输出：</span><br><span class="line">(&#x27;pepperoni&#x27;,) </span><br><span class="line">(&#x27;mushrooms&#x27;, &#x27;green peppers&#x27;, &#x27;extra cheese&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>形参名*toppings中的星号让Python创建一个名为toppings的空元组，并将收到的所有值都封装到这个元组中，即便函数只收到一个值，当然如果想要结合位置，可以使实参和形参保持对应关系，值得注意的是：如果有需要传递不确定数量的实参时，形参位置必须要放在最后</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">def make_pizza(size, *toppings):</span><br><span class="line">	&quot;&quot;&quot;概述要制作的比萨。&quot;&quot;&quot;</span><br><span class="line">	print(f&quot;\nMaking a &#123;size&#125;-inch pizza with the following toppings:&quot;)</span><br><span class="line">	for topping in toppings:</span><br><span class="line">		print(f&quot;- &#123;topping&#125;&quot;)</span><br><span class="line">make_pizza(16, &#x27;pepperoni&#x27;)</span><br><span class="line">make_pizza(12, &#x27;mushrooms&#x27;, &#x27;green peppers&#x27;, &#x27;extra cheese&#x27;)</span><br><span class="line">输出：</span><br><span class="line">Making a 16-inch pizza with the following toppings:</span><br><span class="line">- pepperoni</span><br><span class="line"></span><br><span class="line">Making a 12-inch pizza with the following toppings:</span><br><span class="line">- mushrooms </span><br><span class="line">- green peppers </span><br><span class="line">- extra cheese</span><br></pre></td></tr></table></figure>
+
+<p>接下的的代码块示例是我在接触使用任意数量的关键字实参时，觉得有点绕的地方，这里Key一下，防止日后纠结转不过来，个人理解的其实质是：函数体括号中存在的是一个完整的字典，首先函数处理的是先让字典user_info里先有第一个键值对：’first_name’:’first’，其次处理的是让字典user_info里再有第二个键值对：’last_name’:’last’，接下来由于**user_info可以接受任意数量的实参，所以这时接收了location&#x3D;’princeton’和field&#x3D;’physics’这两个键值对，所以最后一共在字典user_info里会有4个键值对，而不是之前一直纠结的只有’location’:’princeton’和’field’: ‘physics’这两个键值对了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def build_profile(first, last, **user_info):</span><br><span class="line">	&quot;&quot;&quot;创建一个字典，其中包含我们知道的有关用户的一切。&quot;&quot;&quot;</span><br><span class="line">	user_info[&#x27;first_name&#x27;] = first</span><br><span class="line">	user_info[&#x27;last_name&#x27;] = last</span><br><span class="line">	return user_info</span><br><span class="line">user_profile = build_profile(&#x27;albert&#x27;, </span><br><span class="line">							&#x27;einstein&#x27;,</span><br><span class="line">                            location=&#x27;princeton&#x27;, 															field=&#x27;physics&#x27;)</span><br><span class="line">print(user_profile)</span><br><span class="line">输出：</span><br><span class="line">&#123;&#x27;location&#x27;: &#x27;princeton&#x27;, &#x27;field&#x27;: &#x27;physics&#x27;, &#x27;first_name&#x27;: &#x27;albert&#x27;, &#x27;last_name&#x27;: &#x27;einstein&#x27;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>啊，终于把这里弄理解，搞懂了，一直卡在这里~~~</p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://blog.19950628.xyz/2021/04/01/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%BA%94%EF%BC%89/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2021/04/02/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%85%AD%EF%BC%89/" class="article-nav-link">
+        <strong class="article-nav-caption">啵一下</strong>
+        <div class="article-nav-title">
+          
+            《Python编程：从入门到实践（第二版）》自学笔记（十六）
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2021/03/31/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89/" class="article-nav-link">
+        <strong class="article-nav-caption">嗦一下</strong>
+        <div class="article-nav-title">《Python编程：从入门到实践（第二版）》自学笔记（十四）</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "r61P8KWT0BM9tk4gcpvkU7Sj-gzGzoHsz",
+    app_key: "4B5bpFWfrdrirbx8gmFEBFDn",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2019-2024
+        <i class="ri-heart-fill heart_icon"></i> Carrol Chen
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+
+<span id="sitetime"></span>
+  <script language=javascript>
+    function siteTime(){
+      window.setTimeout("siteTime()", 1000);
+        var seconds = 1000
+        var minutes = seconds * 60
+        var hours = minutes * 60
+        var days = hours * 24
+        var years = days * 365
+        var today = new Date()
+        var todayYear = today.getFullYear()
+        var todayMonth = today.getMonth()
+        var todayDate = today.getDate()
+        var todayHour = today.getHours()
+        var todayMinute = today.getMinutes()
+        var todaySecond = today.getSeconds()
+
+/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+year - 作为date对象的年份，为4位年份值
+month - 0-11之间的整数，做为date对象的月份
+day - 1-31之间的整数，做为date对象的天数
+hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+minutes - 0-59之间的整数，做为date对象的分钟数
+seconds - 0-59之间的整数，做为date对象的秒数
+microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2019,6,28,12,00,00)
+        var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond)
+        var diff = t2-t1
+
+        var diffYears = Math.floor(diff/years)
+        var diffDays = Math.floor((diff/days)-diffYears*365)
+        var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours)
+        var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes)
+        var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds)
+        document.getElementById("sitetime").innerHTML=`<div style="text-align:center">本站已运行${diffYears}年${diffDays}天${diffHours}时${+diffMinutes}分${diffSeconds}秒</div>`
+        }
+    siteTime()
+  </script>
+    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.jpg" alt="CarrolChen&#39;s Blogs"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/psychology">心理学</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/management">管理学</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/love">婚姻观</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/education">教育观</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/life">碎生活</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://synology-ds3617xs-picture.kooldns.cn:443">单反仔</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/router">Router | NAS</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://synology-ds3617xs.kooldns.cn:443">私有云(NAS)</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/software-testing">编程测试</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/playlist">音乐单</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+ 
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+ 
+<script src="/js/dz.js"></script>
+ 
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="52"
+        src="//music.163.com/outchain/player?type=2&id=468176711&auto=0&height=32"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
+    
+    
+
+  </div>
+</body>
+
+</html>

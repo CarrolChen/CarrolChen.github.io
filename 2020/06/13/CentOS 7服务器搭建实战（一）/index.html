@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta name="description" content="始终努力奔跑在搏取机会路上的乡巴佬" />
+      
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>CentOS 7服务器搭建实战（一） |  CarrolChen&#39;s Blogs</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.jpg" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="CarrolChen's Blogs" type="application/atom+xml">
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-CentOS 7服务器搭建实战（一）"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  CentOS 7服务器搭建实战（一）
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/06/13/CentOS%207%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E5%AE%9E%E6%88%98%EF%BC%88%E4%B8%80%EF%BC%89/" class="article-date">
+  <time datetime="2020-06-12T16:00:00.000Z" itemprop="datePublished">2020-06-13</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/software-testing/">software testing</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">5.1k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">17 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  
+    <div id="aplayer-BghZzziL" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="355992" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
+    ></div>
+
+<p>搭建在实战开始前，首先要理清一些理论性的网络基础知识和实用工具，对于服务器涉及的网络知识有很多，自己掌握的也并不是很全面也在不断学习充电当中，但针对本次Linux服务器项目的搭建，所需要的网络基础知识，在本文做一个覆盖，说清，理解，明白。</p>
+<h2 id="一、基础知识：TCP-IP协议栈"><a href="#一、基础知识：TCP-IP协议栈" class="headerlink" title="一、基础知识：TCP&#x2F;IP协议栈"></a><strong>一、基础知识：TCP&#x2F;IP协议栈</strong></h2><h3 id="1-详细七层模型和缩略四层模型映射对应关系"><a href="#1-详细七层模型和缩略四层模型映射对应关系" class="headerlink" title="1.详细七层模型和缩略四层模型映射对应关系"></a><strong>1.详细七层模型和缩略四层模型映射对应关系</strong></h3><p>七层模型：物理层、数据链路层、网络层、传输层、会话层、表示层、应用层</p>
+<p>四层模型：网络访问层（数据链路层或网络接口层）、网络层、传输层、应用层</p>
+<p><img src="https://s1.ax1x.com/2020/06/15/NSxKyj.png"></p>
+<p>有些地方叫法不一样，实则表达含义是一样的，在TCP&#x2F;IP 参考模型中，各项通信协议各有归属，像我们在浏览器中常用的：HTTP（超文本传输协议）、DNS（域名系统）、FTP（文件传输协议）、SMTP（简单邮件传输协议等）都是属于应用层协议，而 TCP、UDP 则属于传输层协议，IP 则属于网络层协议</p>
+<p><img src="https://s1.ax1x.com/2020/06/15/NSxvBn.png"></p>
+<h3 id="2-完整的一次网络通信过程模拟"><a href="#2-完整的一次网络通信过程模拟" class="headerlink" title="2.完整的一次网络通信过程模拟"></a><strong>2.完整的一次网络通信过程模拟</strong></h3><p>为了对HTTP请求的通信过程有一个更好的理解，从TCP&#x2F;IP四个层次出发，对应各个层次的通信实体，或者媒介（例如浏览器，路由器以及网线等），看各个协议是如何在这些通信实体中发生作用，将一个请求发送到服务器，服务器的响应又是如何赶回来的。</p>
+<p>整体来讲，一次完整的通信，很像快递邮递包裹，物品被加上包装，写上地址信息和联系方式，经过一个又一个的快递中转站，到达收货人的位置。在网络请求中，请求的数据就是需要快递的物品，IP地址和MAC地址就是通信的地址，网线和路由器、交换机和集线器等就是运输道路和快递中转站，网络协议则可以看做快递员和快递政策，而和快递类似的是网络通信也会出现丢包（包裹损坏）等情况。所以说，一个简单的HTTP请求，要完整地拿到请求信息，中间有若干操作系统组件、通信协议、通信实体参与，才能保证通信的顺利进行。</p>
+<p>那么，这个快递过程，其基本原则是通过分层的顺序，发送端由上往下发送，接收端则由下向上接收。为了保证数据顺利发送到下一个层次，会在发送在其头部加上一些必要的信息，这些信息是为了保证数据的完整和符合需求的约束信息。发送HTTP请求时，经常会设置Request Header，例如 ：Content-Type：text&#x2F;html 是向服务器说明，需要的是 HTML 页面，返回其他东西是不行的。</p>
+<p>这些头部信息还可能包含协议信息，请求路径、请求方法等，但这仅仅是发生在应用层，整个通信过程，经过四个层次，会被依次加上 HTTP 请求头，TCP头部、IP头部以及以太网头部。数据加上这些头部信息之后，才会被发往下一层，数据经过重重包装，从电脑网卡出发，穿过若干路由器，网线，交换机，到达目标服务器所在的子网，服务器要做的则是相反的过程，它会根据前面加上的头部信息，层层解析，最后到达服务器被处理（处理就是服务端程序代码的责任），之后再将响应数据返回。整体过程如下图：</p>
+<p><img src="https://s1.ax1x.com/2020/06/15/NpS6Qe.jpg"></p>
+<p>数据在各个层次间依次传递，其传递的数据单位可以统一理解为数据包，数据包在不同的层次有不同的称呼，平时熟悉的是其从应用层出发时，将之称为HTTP请求消息（message）或者报文；为其加上消息头之后，发送至传输层，加上TCP头部，叫它报文段（segment）；到网络层，加上 IP 头部，成为 IP 数据包；到了最后的网络访问层，其已经套上层层包装，在这里在为其加上以太网首部的同时，还会加上一些尾部信息，摇身变为帧（framing），这个过程叫做封装过程。不管怎么叫，数据在各个层次间，是以数据包的形式传递，当数据量大时，还会出现分包传递的情况。</p>
+<h3 id="3-通信过程中每一协议参与流程"><a href="#3-通信过程中每一协议参与流程" class="headerlink" title="3.通信过程中每一协议参与流程"></a><strong>3.通信过程中每一协议参与流程</strong></h3><p>假设现对：<a target="_blank" rel="noopener" href="https://www.google.com/">https://www.google.com/</a> 进行访问</p>
+<h4 id="①-DNS查询解析"><a href="#①-DNS查询解析" class="headerlink" title="①.DNS查询解析"></a><strong>①.DNS查询解析</strong></h4><p>URL只是为了更友好识别网络程序而设置的互联网资源的定位标识，浏览器首先会对URL进行解析，获取到请求的协议（https），域名（google.com），路径（&#x2F;），由于没有其他子域名，也就是查询 google 的默认主页，解析完毕后，DNS开始工作。</p>
+<p>DNS，也就是域名查询系统，负责URL对应的IP地址的查询，每个操作系统会内置Socket协议库，协议库中有解析器（resolver）专门负责这个过程，经过 DNS 查询，浏览器拿到了请求资源的IP地址。IP地址，又叫网际协议地址，是分配给网络上设备的数字标识，也就是说，只要联网的设备，例如电脑、手机以及路由器等都是有IP地址的，其是我们的请求数据识别服务器在网络中的位置的必须标识。</p>
+<h4 id="②-MAC地址查询"><a href="#②-MAC地址查询" class="headerlink" title="②.MAC地址查询"></a><strong>②.MAC地址查询</strong></h4><p>IP地址在网络层使用，但在实际的数据链路上传递数据时，在同一个链路中不同的计算机，其必须要使用另一个地址来识别——Mac地址，又叫做物理地址。通常提到三个地址：IP地址、Mac地址以及端口号，三者分别代表的是：</p>
+<p><strong>IP地址</strong>：网络中互联的主机和路由器的标识。</p>
+<p><strong>Mac 地址</strong>：每个网卡硬件的物理地址。</p>
+<p><strong>端口号</strong>：识别同一个主机上不同的应用程序，也可以理解为程序地址。</p>
+<p>所以，在一个网络通信中，需要用到五大识别符：源IP地址、目标IP地址、协议、源端口号和目标端口号。Mac地址是每一个网卡被生产的时候就写死在其中的，所以其是不变且唯一的，紧接着就是要得到服务器的Mac地址，引入一个新的协议——ARP。</p>
+<p>ARP，英文全称叫做 Address Resolution Protocol，也就是地址解析协议，其作用是：根据IP地址获取通信设备的物理地址，其工作原理类似于以前我们常见的广播，它会将包发送给同一以太网的所有主机，若目标主机的Mac地址与对应的IP地址吻合，则找到了目标，但是若每次查询都要给所有的主机发送ARP请求，网络中则会出现很多ARP包，因此每个主机都会有一个ARP缓存，里面存放着常用的 MAC地址，主机会优先从缓存中查询是否有需要的信息，如果有就不再发送广播。Mac地址会在网络层加入IP头部发往网络访问层。其实仔细观察会发现，为了提高效率和性能，网络通信中随处可见缓存，HTTP 缓存、DNS缓存以及ARP缓存等。值得了解的是在IPv6中，有一个 NDP（邻居发现协议）替代 ARP 来完成这个工作。</p>
+<h4 id="③-套接字数据传输"><a href="#③-套接字数据传输" class="headerlink" title="③.套接字数据传输"></a><strong>③.套接字数据传输</strong></h4><p>之前提到操作系统中有一个协议库，负责本机中网络通信的很多功能，在DNS查询的时候，协议栈中的解析器就参与其中，当应用层获取到服务器的IP地址和MAC地址，已经拥有了数据传递的必要条件，接下来浏览器会向操作系统的协议库发出委托指令，调用其中Socket库中的程序组件，建立套接字（socket），套接字的本质可以理解为一个数据通道的出入口，其执行的是一个“打开，读&#x2F;写，关闭”的流程。</p>
+<p>在进行数据传输时，客户端和服务器都会创建一个套接字，之后调用socket库中的connect组件，该组件会依据描述符（套接字的匹配令符，与服务端的套接字的接头暗号），服务器的IP地址和端口号，在浏览器和目标服务器之间建立一个传输通道（实际上并没有真实的通道，中间隔着N多网关、路由器和防火墙，这样讲是为了更好理解），而听的最多的TCP三次握手四次挥手，实际就是发生在这个阶段，稍后作一个详细的说明。</p>
+<p>通道建立之后，接下来就是数据的读写操作，程序代码无法直接控制套接字，它依然会委托Socket库中的组件来完成数据的读写（write 和 read），数据传输完成后，服务器会主动执行断开操作，调用Socket库中的close组件断开连接，浏览器发现之后，也会执行断开操作，数据传输完成。可以看到，在应用程序代码的背后，操作系统中内置的组件库和互联网协议互为网络通信的左膀右臂，共同负责整个通信过程，缺一不可。</p>
+<h3 id="4-三次握手和四次挥手"><a href="#4-三次握手和四次挥手" class="headerlink" title="4.三次握手和四次挥手"></a><strong>4.三次握手和四次挥手</strong></h3><p>TCP和UDP是传输层中的两个主要协议，两者的区别是：前者是面向连接的（实际就是套接字管道）、可靠的流协议；后者则并不可靠，它采取一种“尽最大努力”的传输策略，浏览器、邮件等应用程序一般使用 TCP 传递数据，而像DNS查询等较短的收发则使用UDP。整体来讲，之所以要在发送数据之前建立套接字，正是因为TCP是面向连接的传输协议，在传输协议面前，你发送的内容无关紧要，它们会将之看为一串具有一定长度的数据。为了保证数据传输的可靠，TCP在套接字建立连接时，采用“三次握手”策略传输数据。下面是一张三次握手流程图：</p>
+<p><img src="https://s1.ax1x.com/2020/06/17/NZe21x.png"></p>
+<p>说明：图中的syn是 Synchronize Sequence Numbers 的简写，也就是同步序列编号，拥有数据传输序列的标识；ack是acknowledgement，表示确认。</p>
+<p>通俗来讲，是这样一个过程：</p>
+<p>第一次握手：客户端尝试连接服务器，向服务器发送syn包（同步序列编号），syn&#x3D;j，其进入SYN_SEND 状态等待服务器确认：我已准备好，随时出发！</p>
+<p>第二次握手：服务器接收客户端 syn 包并确认（ack&#x3D;j+1），同时向客户端发送一个 syn 包（syn&#x3D;k），也即 syn + ack 包，此时服务器进入SYN_RECV 状态：收到请求，随时接收。</p>
+<p>第三次握手：客户端收到服务器的 syn + ack 包，向服务器发送确认包 ack（ack&#x3D;k+1），此包发送完毕，客户端和服务器进入ESTABLISHED 状态，完成三次握手：OK，我知道了，那我们开始发送数据。</p>
+<p>可能会觉得相当麻烦，确认一次就可以为什么需要三次握手呢？其实，为了保证数据传输的绝对可靠，三次确认是最少的次数，试想这样一种情况：在第一次得到确认后，客户端发送数据出去，但是这个数据由于中途网络等问题，迟迟到不了服务端，服务端选择关掉通道，但通道关闭后，刚刚的数据又跑过来了，这时候，服务端会将这个数据视为来自客户端的新的传输请求，同意建立连接，而建立一个新的连接，但是，客户端并没有发送数据，所以，它会忽视服务端的确认，也不会回应给服务端，服务端就在傻傻滴等待，但这种等待是没有结果的，这就造成了服务端资源的浪费。</p>
+<p>知乎上有另外一种理解：之所以需要三次握手，本质的原因是：传输信道是不可靠的，你不知道网络会在什么时候出什么样的问题，所以，为了保证传输的确可靠，三次握手是理论上的最小值。</p>
+<p>TCP传输数据时，并不是将所有数据一股脑全丢出去，而是会将数据存放在一个的发送缓冲区，并且会等待应用程序的下一段程序到达，之所以这样干，是因为一收到数据立马发送，很可能会造成信道的浪费与闲置，导致网络效率太低，就像明明很宽的马路，非要像过独木桥一样通过。</p>
+<p>而TCP如何决定数据什么时候会发送，其拥有一套计算机制，整体来说，是按网络包的长度以及应用程序送包过来的时间，虽然你的数据很小，但你半天不发送，我也不会一直傻等着。</p>
+<p>还有一种情况是，当发送过来的数据包很大时，会在缓冲区对包进行拆分发送，拆分的时候，TCP模块会计算好每一块数据的开头和结尾的字节数，并将之写在TCP头部信息中，以待对方确认，根据这些起始序号，接收方可以判断是否有数据遗漏的情况。</p>
+<p>每发送一个包，就需要等待ack包的确认，这也是一种资源浪费，所以为了利用等待ack的空闲时间，数据可以不用等待ack直接发送，但是这会出现一种情况，一边一味地发送，但超过了接收方的处理能力，就会出现网络拥堵，得不偿失。为了解决这个问题，TCP 采取了一种滑动窗口的发送策略，它的原理是这样的：</p>
+<p>滑动窗口实际上是数据流量控制策略，我们可以将所有的数据想象为一个序列，而窗口则是数据可处理的数据大小，接收方会将窗口的大小写入ack包的头部信息中，告知发送方，发送方会据此动态调整发送的速率，由于传输的持续进行，这个窗口大小会动态变化，因此达到了流量的控制，其本质的目的是，不要发的太快，让接收方处理不过来。</p>
+<p><img src="https://s1.ax1x.com/2020/06/17/NZmXGR.jpg"></p>
+<p>但是在浏览器和服务器之间，可能隔着极多的网关、路由器、交换机等，数据是如何在庞大无比的因特网上找到服务器的呢？这里就涉及到网络层协议了，实际上这一切在请求发送之前已经准备好了，我们使用DNS和ARP等方式，获取到了目标服务器的IP地址和Mac地址，这两个地址引导发送的数据包到达服务器，IP地址用于在网络中的所有主机中匹配通信的目标主机，IP地址包含网络标识和主机标识，前者用于区别不同的网段，后者找到同一网段的不同主机，数据到达路由器时，路由器会根据网络标识将数据转发到相应的网段，到达相应的网段之后，又会根据主机号，到达真正的主机。</p>
+<p>记载到这里，可能会碰到一个疑惑，就是既然IP地址都能找到目标服务器，为什么还需要Mac地址？</p>
+<p>其实是：在同一个网段内通信时，只用知道Mac地址，就可以精准找到目标，但是互联网上的网络数量无比庞大，网络被各大运营商分割为多个网段，每个网段又有多个子网，如果仅仅知道一个Mac地址，要在所有的网络设备进行匹配，就是相当大的工程了，这时候IP地址的妙用体现出来了，它可以用来找路，这就类似于快递中的省市地区等，而Mac地址可能是唯一的名字，你在全中国找一个小强的人那就太多了，但是你要具体到某一个村或小区，就很简单了。</p>
+<p><img src="https://s1.ax1x.com/2020/06/17/NZn4FH.jpg"></p>
+<p>另外一个原因是：交换机这个东西，只认Mac地址，就如同路由器根据IP地址决定网络请求的转发路线，交换机通过 Mac 地址来确定具体的网卡位置。</p>
+<p>路由器、交换机、网线、光纤等正是TCP&#x2F;IP四层协议的最底层，网络访问层，也就是OSI模型中的数据链路层和物理层，在这一层，数据被加上以太网首部，封装成帧在各个路由器之间转发传送，经常来说，路由器之间的传送又有常用的点对点协议，也就是PPP（Point-To-Point Protocol），这是一个网络访问层协议，PPP会在帧的前后加上帧界定符进行发送。最后，到达服务器所在子网，会将消息转交网络层向上传递。向上传递的过程如前所述，乃是解析头部信息，最终到达服务器的相反过程，不再细述。</p>
+<p>这个过程可以在前面的整体过程图清晰看到，请求数据到达服务器所在子网的路由器之后，又是一个由下而上的过程，这与客户端发送数据基本相反，每经过一个层次，都会解析前面添加到请求数据上的多层头部信息，交由上一层处理，在整个TCP&#x2F;IP协议栈的帮助下，请求数据终于到达了目标服务器，穿过服务器的网卡，服务器操作系统同样有协议栈来负责找到服务端程序对应的端口，将数据交由服务端应用程序处理。</p>
+<p>服务器会根据我们的请求头信息，处理返回结果，之后请求响应信息重新出发，再次回到浏览器，浏览器收到请求后，经过解析、渲染过程，页面呈现在我们面前。</p>
+<h2 id="二、实用工具：vmware、Xshell（Putty）"><a href="#二、实用工具：vmware、Xshell（Putty）" class="headerlink" title="二、实用工具：vmware、Xshell（Putty）"></a><strong>二、实用工具：vmware、Xshell（Putty）</strong></h2><h3 id="1-vmware"><a href="#1-vmware" class="headerlink" title="1.vmware"></a><strong>1.vmware</strong></h3><p>vmware虚拟机，用最简单的一句话讲就是一个装载工具（容器），一个壳，它类似于EXSI或者说最近玩的比较火的Docker，简单看一下，这是我本地的一个vmware里面装了一个Ubuntu系统，用于编译路由器的OpenWrt固件所使用的，界面是比较简洁，一般我还常用CentOS 7的系统，目前没有装。</p>
+<p><img src="https://s1.ax1x.com/2020/06/18/NZBagx.png"></p>
+<h3 id="2-Xshell（Putty）"><a href="#2-Xshell（Putty）" class="headerlink" title="2.Xshell（Putty）"></a><strong>2.Xshell（Putty）</strong></h3><p>Xshell（Putty）其实就是一个连接工具，目前个人用比较多的就是Xshell，可以连接以Linux操作系统的服务器，现在绝大多数的VPS都会装Linux的CentOS 7的这款发行版，一般的像科学上网的部署，流量的伪装…….，这里不多说，反正有一台Linux的服务器，你可以干很多的事，目前我自己也有很多Linux的小主机服务器，绑定公网IP的要实现穿透技术…..，还是建议自己去买个阿里云、华为云…..这些大厂的云服务器，也简单的看一下吧，这是我连接的自己家一台安装Armbian操作系统的服务器，Armbian系统也是Linux系统的一种，它一般运行在ARM架构处理器的机器上跑。</p>
+<p><img src="https://s1.ax1x.com/2020/06/18/NZDBzq.jpg"></p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://blog.19950628.xyz/2020/06/13/CentOS%207%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E5%AE%9E%E6%88%98%EF%BC%88%E4%B8%80%EF%BC%89/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2020/06/26/25%E5%B2%81%E7%9A%84%E6%97%A0%E7%9F%A5%E4%B8%8E%E6%97%A0%E7%95%8F/" class="article-nav-link">
+        <strong class="article-nav-caption">啵一下</strong>
+        <div class="article-nav-title">
+          
+            25岁的无知与无畏
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/06/01/%E5%88%AB%E8%BD%BB%E6%98%93%E5%AE%89%E6%85%B0%E4%B8%80%E4%B8%AA%E6%88%90%E5%B9%B4%E4%BA%BA%EF%BC%8C%E4%BC%9A%E7%97%9B/" class="article-nav-link">
+        <strong class="article-nav-caption">嗦一下</strong>
+        <div class="article-nav-title">别轻易安慰一个成年人，会痛</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "r61P8KWT0BM9tk4gcpvkU7Sj-gzGzoHsz",
+    app_key: "4B5bpFWfrdrirbx8gmFEBFDn",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2019-2024
+        <i class="ri-heart-fill heart_icon"></i> Carrol Chen
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+
+<span id="sitetime"></span>
+  <script language=javascript>
+    function siteTime(){
+      window.setTimeout("siteTime()", 1000);
+        var seconds = 1000
+        var minutes = seconds * 60
+        var hours = minutes * 60
+        var days = hours * 24
+        var years = days * 365
+        var today = new Date()
+        var todayYear = today.getFullYear()
+        var todayMonth = today.getMonth()
+        var todayDate = today.getDate()
+        var todayHour = today.getHours()
+        var todayMinute = today.getMinutes()
+        var todaySecond = today.getSeconds()
+
+/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+year - 作为date对象的年份，为4位年份值
+month - 0-11之间的整数，做为date对象的月份
+day - 1-31之间的整数，做为date对象的天数
+hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+minutes - 0-59之间的整数，做为date对象的分钟数
+seconds - 0-59之间的整数，做为date对象的秒数
+microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2019,6,28,12,00,00)
+        var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond)
+        var diff = t2-t1
+
+        var diffYears = Math.floor(diff/years)
+        var diffDays = Math.floor((diff/days)-diffYears*365)
+        var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours)
+        var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes)
+        var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds)
+        document.getElementById("sitetime").innerHTML=`<div style="text-align:center">本站已运行${diffYears}年${diffDays}天${diffHours}时${+diffMinutes}分${diffSeconds}秒</div>`
+        }
+    siteTime()
+  </script>
+    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.jpg" alt="CarrolChen&#39;s Blogs"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/psychology">心理学</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/management">管理学</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/love">婚姻观</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/education">教育观</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/life">碎生活</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://synology-ds3617xs-picture.kooldns.cn:443">单反仔</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/router">Router | NAS</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://synology-ds3617xs.kooldns.cn:443">私有云(NAS)</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/software-testing">编程测试</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/playlist">音乐单</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+ 
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+ 
+<script src="/js/dz.js"></script>
+ 
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="52"
+        src="//music.163.com/outchain/player?type=2&id=468176711&auto=0&height=32"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
+    
+    
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta name="description" content="始终努力奔跑在搏取机会路上的乡巴佬" />
+      
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>Git的详细使用教程（一） |  CarrolChen&#39;s Blogs</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.jpg" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="CarrolChen's Blogs" type="application/atom+xml">
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-Git的详细使用教程（一）"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Git的详细使用教程（一）
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/04/15/Git%E7%9A%84%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/" class="article-date">
+  <time datetime="2020-04-14T16:00:00.000Z" itemprop="datePublished">2020-04-15</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/software-testing/">software testing</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">2.7k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">9 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  
+    <div id="aplayer-FFnOgCnx" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="208902" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
+    ></div>
+
+
+
+<h3 id="1-Github的注册和Git的简述及安装"><a href="#1-Github的注册和Git的简述及安装" class="headerlink" title="1.Github的注册和Git的简述及安装"></a><strong>1.Github的注册和Git的简述及安装</strong></h3><p>这里跳过前期的准备工作，可以参考<a target="_blank" rel="noopener" href="https://www.carrol.xyz/2020/03/28/%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E4%BD%A0%E5%88%A9%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">这里</a>自行操作完成，安装后别忘记做一个全局配置，里面也有提到。另外在进行Demo时，请建立一个空的文件夹。</p>
+<h3 id="2-Git的基本命令"><a href="#2-Git的基本命令" class="headerlink" title="2.Git的基本命令"></a><strong>2.Git的基本命令</strong></h3><p>记载前，放几张关于git的流程图，方便后续理解</p>
+<p><img src="https://s1.ax1x.com/2020/04/27/Jh2X3q.jpg"></p>
+<p><img src="https://s1.ax1x.com/2020/04/27/JhRCE4.png"></p>
+<h4 id="2-1-git-init"><a href="#2-1-git-init" class="headerlink" title="2.1  git init"></a><strong>2.1  git init</strong></h4><p>此命令是指初始化一个文件夹，执行完毕后，会在目录里看到一个隐藏文件“.git”，当然我这里说的隐藏文件是基于Linux操作系统里的，因为Git的命令行，如果学过Linux操作系统的，不难发现，两者很相似，只不过有些Linux操作系统的命令行在Git里不能简写或者说是缩写。在这个隐藏文件里还有很多的文件，此时的目录结构是Demo&#x2F;.git，我们把除了隐藏文件之外的所有Demo空间称之为工作区，“.git”我们称之为版本库。当我们进入Demo&#x2F;.git，如果我们往里面添加心得文件，稍后会看到有一个文件是“index”，我们把它称之为暂存区。</p>
+<h4 id="2-2-git-add"><a href="#2-2-git-add" class="headerlink" title="2.2  git add"></a><strong>2.2  git add</strong></h4><p> 此命令是指将一个已经编辑好的文件添加到暂存区，一般来说我们会在其后面添加上相对应的文件名。这里留意一下，就是当同一个文件被修改后，如果想再次提交到版本库时，一定还要进行一次，<code>git add</code></p>
+<h4 id="2-3-git-status"><a href="#2-3-git-status" class="headerlink" title="2.3  git status"></a><strong>2.3  git status</strong></h4><p>此命令是指查看目前暂存区的状态，一般基于上面的添加完文件，暂存区状态发生改变，会给到一个状态的反馈。</p>
+<h4 id="2-4-git-commit"><a href="#2-4-git-commit" class="headerlink" title="2.4  git commit"></a><strong>2.4  git commit</strong></h4><p>此命令是指将暂存区的文件，正式提交到版本库里，留意一下，这里的提交文件是指将暂存区的文件进行提交，没有放进暂存区的文件，是不会被提交到版本库里的。一般来说，常见的命令行是：<code>git commit -m &#39;需要备注的信息&#39;</code>，后面的参数<code>-m</code>是指提交时进行备注，可以理解为是message的缩写首字母，单引号里面是备注的信息，我在正常使用的过程中，会把重要的修改信息，提交在这个备注里，方面后续版本回退时，一眼知道，该回退到哪个版本。有时候在看资料也会看到这样的两条命令行：<code>git commit -am &#39; &#39;</code>、<code>git commit -amend</code>和<code>git commit -a</code>，前者的参数<code>-am</code>，是将之前已经commit进版本库的文件，如果发生修改，直接再次提交到版本库，而不需要再像之前一样，再次add后再commit，即跳过了一个上面刚说的再次<code>git add</code>的步骤；中者的参数<code>-amend</code>，是指修改最近一次commit时message的信息，一般多用于commit时少写了某些信息或信息commit错误；后者是指强制性的将工作区改变的文件直接commit到版本库。</p>
+<h4 id="2-5-git-diff"><a href="#2-5-git-diff" class="headerlink" title="2.5  git diff"></a><strong>2.5  git diff</strong></h4><p>此命令是指将变动修改的文件，进行对比，看一下发生了怎样的修改，但是前提是你修改后的文件已经add进暂存区，然后再去执行<code>git diff --cached</code>，最后一行如果有“+”或者“-”的字样，代表添加或者删除了什么。注意：在执行<code>git diff --cached</code>，后面没有去添加参数<code>--cached</code>，那么此时它所代表的意义就发生了改变，此时看的是工作区和暂存区的区别，加了的话，看的是版本库和暂存区的区别。这里一定要特别的留意，很多人会经常在这里被绕死。执行<code>git diff --cached</code>，默认会把所有文件的修改变动全部列出来，如果想单独对一个文件的变动修改，再加一个文件名即可。</p>
+<h4 id="2-6-git-reset"><a href="#2-6-git-reset" class="headerlink" title="2.6  git reset"></a><strong>2.6  git reset</strong></h4><p>此命令是指将之前修改变动文件里面变动的信息取消掉，通常称叫回滚。</p>
+<h4 id="2-7-git-mv"><a href="#2-7-git-mv" class="headerlink" title="2.7  git mv"></a><strong>2.7  git mv</strong></h4><p>此命令是指将文件进行重命名操作，具体格式是：<code>git mv 原文件 目标文件</code>，这个命令很Linux操作系统里的cp命令很相像。但是这里注意一下，此命令会同时修改本地文件名和版本库里的。</p>
+<h4 id="2-8-git-log"><a href="#2-8-git-log" class="headerlink" title="2.8  git log"></a><strong>2.8  git log</strong></h4><p>此命令是指将之前一系列的操作，干了些什么，全部以日志的形式展现出来，非常的详细，里面会包含每次提交的唯一版本更新迭代号（实则里面是一段哈希码），执行人是谁，账户是什么，执行日期是什么时间，commit什么信息，都可以看到。很类似Linux里的ls -la。同样的，在查阅资料时，也会看到其他命令行：<code>git log --oneline</code>、<code>git log -n数字</code>、<code>git log --all</code>和<code>git log --graph</code>.一一说明，第一个命令行是指以简洁的一行式查看历史；第二个命令是指查看最近的多少次；第三个命令是指查看所有branch的所有记录；最后一个是指以图形化的方式去查看。</p>
+<h4 id="2-9-git-branch和git-checkout"><a href="#2-9-git-branch和git-checkout" class="headerlink" title="2.9  git branch和git checkout"></a><strong>2.9  git branch和git checkout</strong></h4><p>这两个命令，我是放在一起去进行学习的，因为涉及到新建分支，查看分支，切换分支以及删除分支，也是Git中最为繁琐复杂，让人难以理解，很大程度上会自行绕死自己，走不出死胡同。</p>
+<p>git branch这个命令行是用于操作git分支，因为在开发过程中，为了不影响其他人员的工作进度，会不断的建立新的分支，后期开发完毕后，再进行合并。常见的命令行有：<code>git branch -v</code>和<code>git branch -d 分支名</code>.前者是看本地有多少分支，后者是删除叫什么名字的分支。</p>
+<p>git checkout这个命令行是用于创建和切换分支，常见的命令行：<code>git checkout -b 新分支名 原分支名</code>和<code>git checkout 分支名</code>.前者是创建一个新的branch，前面的参数<code>-b</code>要留意一下，后者是切换分支。特殊的是：git checkout 在去创建新分支时，可以就git log中查看到的哈希值，直接去指定版本号，只要保证其唯一性就行。</p>
+<h4 id="2-10-分离头指针"><a href="#2-10-分离头指针" class="headerlink" title="2.10  分离头指针"></a><strong>2.10  分离头指针</strong></h4><h5 id="a-什么是分离头指针？"><a href="#a-什么是分离头指针？" class="headerlink" title="a.什么是分离头指针？"></a><strong>a.什么是分离头指针？</strong></h5><p>首先理解分离，就是在主干线以外的区域，进行派生出一个新的副干线。它是不属于分支的分支，可以理解为缓存区域，在这个区域里做的任何操作，不会影响其他区域。后期如果这个区域的修改不错，那么可以进行新建branch，键入：<code>git branch 新分支名 修改后临时版本的哈希值</code>，如果修改的不如意，随时可以进行丢弃，不影响。</p>
+<h5 id="b-什么时候用到？"><a href="#b-什么时候用到？" class="headerlink" title="b.什么时候用到？"></a><strong>b.什么时候用到？</strong></h5><p>一般情况下，是在某个开发版本过程中，尝试添加新的功能，临时给的一种需求。那么如果在原来的基础上去改的话不太好，因为它会影响原来的branch，假设要回滚，还要回滚好多的东西，那么此时就可以进行分离头指针。</p>
+<h4 id="2-11-gitk"><a href="#2-11-gitk" class="headerlink" title="2.11  gitk"></a><strong>2.11  gitk</strong></h4><p>此命令是直接打开一个图形化界面，直观清晰的展现出一个树状关系图，可以看到各个版本的信息，包含父子关系，提交时间，修改信息。这里提及一下，在gitk出现的图形化界面中，选择View&gt;New View&gt;All refs&gt;OK后，可以进行手动tags，于此同时可以关注一下版本之间的关系，其中Child是指当前版本的下一个版本，相当于子系；Parent是指当前版本的上一个版本，相当于父系。也可以查看到，当前一共有多少branch拥有此版本。</p>
+<h4 id="2-12-git-rebase"><a href="#2-12-git-rebase" class="headerlink" title="2.12  git rebase"></a><strong>2.12  git rebase</strong></h4><p>此命令称为变基操作，说直白点就是，指定修改历史版本中的提交信息，一般来说会结合<code>git log</code>，去一起进行操作。执行<code>git rebase -i 版本号（哈希值）</code>，那么后续版本所执行的所有变动都会呈现出来，同时界面会把所有的命令展现给开发者，可以自行选择command。</p>
+<h4 id="2-13-git-rm"><a href="#2-13-git-rm" class="headerlink" title="2.13  git rm"></a><strong>2.13  git rm</strong></h4><p>此命令执行的是删除操作，这里会分删除工作区的文件还是暂存区的文件。删除前者，直接执行<code>git rm 文件名</code>，删除后会把相关的变动放到暂存区里；删除后者，直接执行<code>git rm --cached 文件名</code>.</p>
+<h4 id="2-14-git-stash"><a href="#2-14-git-stash" class="headerlink" title="2.14  git stash"></a><strong>2.14  git stash</strong></h4><p>此命令主要的运用场景是：临时任务的加塞。说直白点就是，当开发者在进行开发时，突然接到验证某个历史版本中的Bug，既不能放弃目前所开发的代码，也不能不去执行Bug的验证，那么此时就运用到此命令。假设目前所处的场景就是，我作为一个开发者，代码开发到一半，这个时候我执行<code>git stash</code>，系统紧接着会给到一个反馈并附有临时版本号（哈希值），如果还是不放心，可以进一步执行：<code>git stash list</code>，所有临时保存的版本号（哈希值）都会呈现在下面。这是选择要验证某个版本，切换过去，该是什么流程就是什么流程，验证改完Bug后，是要回到原先的开发环境，这时执行：<code>git stash apply</code>，就会回到原先的开发环境，如果出现文件内容有更改，影响到目前开发的版本，那么系统会用类似&lt;&lt;&lt;&lt;&lt;&lt;……………….&gt;&gt;&gt;&gt;&gt;&gt;这种样式去提醒你。当然有时查看资料时，也会看到：<code>git stash pop</code>，此命令是指将之前放在list下暂时保存的缓存移除掉，所以要小心执行此命令。</p>
+<h4 id="2-15-git-clone"><a href="#2-15-git-clone" class="headerlink" title="2.15  git clone"></a><strong>2.15  git clone</strong></h4><p>此命令是指克隆某个仓库，它所支持的协议有很多，包含经常接触的http，https，ssh，git……，形式是：<code>git clone URL</code>，这里有一个简便的用法，如果访问Git URL进行clone，clone一般都是想要的是master分支，需要指定用户名去进行登录，执行：<code>git clone 用户名@URL</code>，后续输入密码即可。我经常使用的环境就是进行Router固件进行编译时，会经常clone OpenWrt的仓库进行操作，操作系统会去使用Ubuntu发行版。</p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://blog.19950628.xyz/2020/04/15/Git%E7%9A%84%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2020/04/19/Git%E7%9A%84%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89/" class="article-nav-link">
+        <strong class="article-nav-caption">啵一下</strong>
+        <div class="article-nav-title">
+          
+            Git的详细使用教程（二）
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/04/13/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BB%8B%E7%BB%8D/" class="article-nav-link">
+        <strong class="article-nav-caption">嗦一下</strong>
+        <div class="article-nav-title">版本控制工具的相关介绍</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "r61P8KWT0BM9tk4gcpvkU7Sj-gzGzoHsz",
+    app_key: "4B5bpFWfrdrirbx8gmFEBFDn",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2019-2024
+        <i class="ri-heart-fill heart_icon"></i> Carrol Chen
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+
+<span id="sitetime"></span>
+  <script language=javascript>
+    function siteTime(){
+      window.setTimeout("siteTime()", 1000);
+        var seconds = 1000
+        var minutes = seconds * 60
+        var hours = minutes * 60
+        var days = hours * 24
+        var years = days * 365
+        var today = new Date()
+        var todayYear = today.getFullYear()
+        var todayMonth = today.getMonth()
+        var todayDate = today.getDate()
+        var todayHour = today.getHours()
+        var todayMinute = today.getMinutes()
+        var todaySecond = today.getSeconds()
+
+/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+year - 作为date对象的年份，为4位年份值
+month - 0-11之间的整数，做为date对象的月份
+day - 1-31之间的整数，做为date对象的天数
+hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+minutes - 0-59之间的整数，做为date对象的分钟数
+seconds - 0-59之间的整数，做为date对象的秒数
+microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2019,6,28,12,00,00)
+        var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond)
+        var diff = t2-t1
+
+        var diffYears = Math.floor(diff/years)
+        var diffDays = Math.floor((diff/days)-diffYears*365)
+        var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours)
+        var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes)
+        var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds)
+        document.getElementById("sitetime").innerHTML=`<div style="text-align:center">本站已运行${diffYears}年${diffDays}天${diffHours}时${+diffMinutes}分${diffSeconds}秒</div>`
+        }
+    siteTime()
+  </script>
+    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.jpg" alt="CarrolChen&#39;s Blogs"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/psychology">心理学</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/management">管理学</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/love">婚姻观</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/education">教育观</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/life">碎生活</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://synology-ds3617xs-picture.kooldns.cn:443">单反仔</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/router">Router | NAS</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://synology-ds3617xs.kooldns.cn:443">私有云(NAS)</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/software-testing">编程测试</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/playlist">音乐单</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+ 
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+ 
+<script src="/js/dz.js"></script>
+ 
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="52"
+        src="//music.163.com/outchain/player?type=2&id=468176711&auto=0&height=32"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
+    
+    
+
+  </div>
+</body>
+
+</html>

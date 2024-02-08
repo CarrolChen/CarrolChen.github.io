@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>Hello World |  CarrolChen&#39;s Blogs</title>
+      <title>《Python编程：从入门到实践（第二版）》自学笔记（十三） |  CarrolChen&#39;s Blogs</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.jpg" />
@@ -45,6 +45,9 @@
         }
       </style>
     <link rel="alternate" href="/atom.xml" title="CarrolChen's Blogs" type="application/atom+xml">
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
 </head>
   </html>
 </html>
@@ -68,7 +71,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-hello-world"
+  id="post-《Python编程：从入门到实践（第二版）》自学笔记（十三）"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -79,7 +82,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Hello World
+  《Python编程：从入门到实践（第二版）》自学笔记（十三）
 </h1>
  
 
@@ -87,15 +90,19 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2024/02/08/hello-world/" class="article-date">
-  <time datetime="2024-02-08T08:37:28.754Z" itemprop="datePublished">2024-02-08</time>
-</a>   
+      <a href="/2021/03/30/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89/" class="article-date">
+  <time datetime="2021-03-29T16:00:00.000Z" itemprop="datePublished">2021-03-30</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/software-testing/">software testing</a>
+  </div>
+  
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">75</span>
+            <span class="post-count">843</span>
         </span>
     </span>
 
@@ -104,7 +111,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1 分钟</span>
+            <span class="post-count">3 分钟</span>
         </span>
     </span>
 </div>
@@ -119,19 +126,31 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+  
+    <div id="aplayer-MxZNqhBy" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="1457154397" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
+    ></div>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a><strong>定义函数</strong></h3><p>首先了解一下定义函数的格式是：def+函数名+括号+冒号</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def greet_user(): </span><br><span class="line"> 	&quot;&quot;&quot;显示简单的问候语。&quot;&quot;&quot; </span><br><span class="line">    print(&quot;Hello!&quot;) </span><br><span class="line">greet_user()</span><br><span class="line">输出：Hello!</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>紧跟在def greet_user(  ):后面的所有缩进行构成了函数体，代码块的第二行文本是称为文档字符串的注释，描述了函数是做什么的。 文档字符串用三引号括起，Python使用它们来生成有关程序中函数的文档。代码行print(“Hello!”)是函数体内的唯一一行代码，因此greet_user(  )只做一项工作：打印Hello! </p>
+<p>由于这个函数不需要任何信息，调用它时只需输入greet_user(  )即可，假设需要向此函数传参才能执行输出，可以在括号中进行添加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def greet_user(username):</span><br><span class="line">	&quot;&quot;&quot;显示简单的问候语。&quot;&quot;&quot;</span><br><span class="line">	print(f&quot;Hello, &#123;username.title()&#125;!&quot;)</span><br><span class="line">greet_user(&#x27;jesse&#x27;)</span><br><span class="line">输出：Hello, Jesse!</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>仔细观察发现，一般来说我们所讲的传参，默认是实参，也就是函数在真正执行时，最终输出的，但是我们在定义函数的时候，括号中也有一个参数，这样的参数是形参。简单通俗一点来讲：形参就是一个影子，负责占坑，最终输出的是实参</p>
+<p>位置实参，必定是跟顺序相关，具体的是指：实参的顺序和形参的顺序相同，要不然会出现信息关联不一致的问题</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def describe_pet(animal_type, pet_name):</span><br><span class="line">	&quot;&quot;&quot;显示宠物的信息。&quot;&quot;&quot;</span><br><span class="line">	print(f&quot;\nI have a &#123;animal_type&#125;.&quot;)</span><br><span class="line">	print(f&quot;My &#123;animal_type&#125;&#x27;s name is &#123;pet_name.title()&#125;.&quot;)</span><br><span class="line">describe_pet(&#x27;hamster&#x27;, &#x27;harry&#x27;)</span><br><span class="line">输出：</span><br><span class="line">I have a hamster.</span><br><span class="line">My hamster&#x27;s name is Harry.</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>在函数被定义后，我们可以多次的进行调用，次数不受任何限制</p>
+<p>但是有时为了防止位置顺序没有按要求一一对应，那么还有一种补救，就是直接将实参和形参绑定在一起，写死，这样也可以，我们把这样方式称作为：关键字实参</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def describe_pet(animal_type, pet_name):</span><br><span class="line">	&quot;&quot;&quot;显示宠物的信息。&quot;&quot;&quot;</span><br><span class="line">	print(f&quot;\nI have a &#123;animal_type&#125;.&quot;)</span><br><span class="line">	print(f&quot;My &#123;animal_type&#125;&#x27;s name is &#123;pet_name.title()&#125;.&quot;)</span><br><span class="line">##从这里开始就是直接写死的情况，但最终达到的效果都是一样的</span><br><span class="line">describe_pet(animal_type=&#x27;hamster&#x27;, pet_name=&#x27;harry&#x27;)</span><br><span class="line">describe_pet(pet_name=&#x27;harry&#x27;, animal_type=&#x27;hamster&#x27;)</span><br><span class="line">输出：</span><br><span class="line">I have a hamster.</span><br><span class="line">My hamster&#x27;s name is harry.</span><br></pre></td></tr></table></figure>
+
+<p>与此同时，如果编写函数时，描述的是某一类的集合时，我们是可以给每个形参指定默认值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def describe_pet(pet_name, animal_type=&#x27;dog&#x27;):</span><br><span class="line">	&quot;&quot;&quot;显示宠物的信息。&quot;&quot;&quot;</span><br><span class="line">	print(f&quot;\nI have a &#123;animal_type&#125;.&quot;)</span><br><span class="line">	print(f&quot;My &#123;animal_type&#125;&#x27;s name is &#123;pet_name.title()&#125;.&quot;)</span><br><span class="line">describe_pet(pet_name=&#x27;willie&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>这里就是直接将动物的类型默认为是狗，如果不对animal_type进行传参的话，那输出默认的animal_type就是狗，但如果后续传参animal_type &#x3D; ‘cat’，那此时以传参的为准，Python会将原先默认的animal_type忽略掉。</p>
+<p>但由于我们在实际运用的过程中，会根据自身的习惯进行编码，所以也可能会混合使用，这也是等效的函数调用的好处</p>
  
       <!-- reward -->
       
@@ -202,7 +221,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://blog.19950628.xyz/2024/02/08/hello-world/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://blog.19950628.xyz/2021/03/30/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -211,6 +230,25 @@
   </div>
 
    
+  <nav class="article-nav">
+    
+      <a href="/2021/03/31/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89/" class="article-nav-link">
+        <strong class="article-nav-caption">啵一下</strong>
+        <div class="article-nav-title">
+          
+            《Python编程：从入门到实践（第二版）》自学笔记（十四）
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2021/03/29/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89/" class="article-nav-link">
+        <strong class="article-nav-caption">嗦一下</strong>
+        <div class="article-nav-title">《Python编程：从入门到实践（第二版）》自学笔记（十二）</div>
+      </a>
+    
+  </nav>
+
    
 <!-- valine评论 -->
 <div id="vcomments-box">
