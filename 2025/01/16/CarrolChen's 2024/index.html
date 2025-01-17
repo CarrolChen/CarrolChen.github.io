@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>《Python编程：从入门到实践（第二版）》自学笔记（十三） |  CarrolChen&#39;s Blogs</title>
+      <title>CarrolChen&#39;s 2024 |  CarrolChen&#39;s Blogs</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.jpg" />
@@ -71,7 +71,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-《Python编程：从入门到实践（第二版）》自学笔记（十三）"
+  id="post-CarrolChen&#39;s 2024"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -82,7 +82,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  《Python编程：从入门到实践（第二版）》自学笔记（十三）
+  CarrolChen&#39;s 2024
 </h1>
  
 
@@ -90,19 +90,15 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2021/03/30/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89/" class="article-date">
-  <time datetime="2021-03-29T16:00:00.000Z" itemprop="datePublished">2021-03-30</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/software-testing/">software testing</a>
-  </div>
-  
+      <a href="/2025/01/16/CarrolChen's%202024/" class="article-date">
+  <time datetime="2025-01-15T16:00:00.000Z" itemprop="datePublished">2025-01-16</time>
+</a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">843</span>
+            <span class="post-count">3.3k</span>
         </span>
     </span>
 
@@ -111,15 +107,13 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">3 分钟</span>
+            <span class="post-count">11 分钟</span>
         </span>
     </span>
 </div>
  
     </div>
       
-    <div class="tocbot"></div>
-
 
 
 
@@ -127,30 +121,32 @@
     <div class="article-entry" itemprop="articleBody">
        
   
-    <div id="aplayer-TnlRTkHs" class="aplayer aplayer-tag-marker meting-tag-marker"
-         data-id="1457154397" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
+    <div id="aplayer-ogddXVqo" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="004ZjKmV3jPrQO" data-server="tencent" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
     ></div>
 
-<h3 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a><strong>定义函数</strong></h3><p>首先了解一下定义函数的格式是：def+函数名+括号+冒号</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def greet_user(): </span><br><span class="line"> 	&quot;&quot;&quot;显示简单的问候语。&quot;&quot;&quot; </span><br><span class="line">    print(&quot;Hello!&quot;) </span><br><span class="line">greet_user()</span><br><span class="line">输出：Hello!</span><br></pre></td></tr></table></figure>
-
-<p>紧跟在def greet_user(  ):后面的所有缩进行构成了函数体，代码块的第二行文本是称为文档字符串的注释，描述了函数是做什么的。 文档字符串用三引号括起，Python使用它们来生成有关程序中函数的文档。代码行print(“Hello!”)是函数体内的唯一一行代码，因此greet_user(  )只做一项工作：打印Hello! </p>
-<p>由于这个函数不需要任何信息，调用它时只需输入greet_user(  )即可，假设需要向此函数传参才能执行输出，可以在括号中进行添加</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def greet_user(username):</span><br><span class="line">	&quot;&quot;&quot;显示简单的问候语。&quot;&quot;&quot;</span><br><span class="line">	print(f&quot;Hello, &#123;username.title()&#125;!&quot;)</span><br><span class="line">greet_user(&#x27;jesse&#x27;)</span><br><span class="line">输出：Hello, Jesse!</span><br></pre></td></tr></table></figure>
-
-<p>仔细观察发现，一般来说我们所讲的传参，默认是实参，也就是函数在真正执行时，最终输出的，但是我们在定义函数的时候，括号中也有一个参数，这样的参数是形参。简单通俗一点来讲：形参就是一个影子，负责占坑，最终输出的是实参</p>
-<p>位置实参，必定是跟顺序相关，具体的是指：实参的顺序和形参的顺序相同，要不然会出现信息关联不一致的问题</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def describe_pet(animal_type, pet_name):</span><br><span class="line">	&quot;&quot;&quot;显示宠物的信息。&quot;&quot;&quot;</span><br><span class="line">	print(f&quot;\nI have a &#123;animal_type&#125;.&quot;)</span><br><span class="line">	print(f&quot;My &#123;animal_type&#125;&#x27;s name is &#123;pet_name.title()&#125;.&quot;)</span><br><span class="line">describe_pet(&#x27;hamster&#x27;, &#x27;harry&#x27;)</span><br><span class="line">输出：</span><br><span class="line">I have a hamster.</span><br><span class="line">My hamster&#x27;s name is Harry.</span><br></pre></td></tr></table></figure>
-
-<p>在函数被定义后，我们可以多次的进行调用，次数不受任何限制</p>
-<p>但是有时为了防止位置顺序没有按要求一一对应，那么还有一种补救，就是直接将实参和形参绑定在一起，写死，这样也可以，我们把这样方式称作为：关键字实参</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def describe_pet(animal_type, pet_name):</span><br><span class="line">	&quot;&quot;&quot;显示宠物的信息。&quot;&quot;&quot;</span><br><span class="line">	print(f&quot;\nI have a &#123;animal_type&#125;.&quot;)</span><br><span class="line">	print(f&quot;My &#123;animal_type&#125;&#x27;s name is &#123;pet_name.title()&#125;.&quot;)</span><br><span class="line">##从这里开始就是直接写死的情况，但最终达到的效果都是一样的</span><br><span class="line">describe_pet(animal_type=&#x27;hamster&#x27;, pet_name=&#x27;harry&#x27;)</span><br><span class="line">describe_pet(pet_name=&#x27;harry&#x27;, animal_type=&#x27;hamster&#x27;)</span><br><span class="line">输出：</span><br><span class="line">I have a hamster.</span><br><span class="line">My hamster&#x27;s name is harry.</span><br></pre></td></tr></table></figure>
-
-<p>与此同时，如果编写函数时，描述的是某一类的集合时，我们是可以给每个形参指定默认值</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def describe_pet(pet_name, animal_type=&#x27;dog&#x27;):</span><br><span class="line">	&quot;&quot;&quot;显示宠物的信息。&quot;&quot;&quot;</span><br><span class="line">	print(f&quot;\nI have a &#123;animal_type&#125;.&quot;)</span><br><span class="line">	print(f&quot;My &#123;animal_type&#125;&#x27;s name is &#123;pet_name.title()&#125;.&quot;)</span><br><span class="line">describe_pet(pet_name=&#x27;willie&#x27;)</span><br></pre></td></tr></table></figure>
-
-<p>这里就是直接将动物的类型默认为是狗，如果不对animal_type进行传参的话，那输出默认的animal_type就是狗，但如果后续传参animal_type &#x3D; ‘cat’，那此时以传参的为准，Python会将原先默认的animal_type忽略掉。</p>
-<p>但由于我们在实际运用的过程中，会根据自身的习惯进行编码，所以也可能会混合使用，这也是等效的函数调用的好处</p>
+<p>24年，来上海的第7年，个人年度规划的第4年。</p>
+<p>与往年不同，24年的个人年度规划随心记check，没有以往剧烈的强迫症，必须要在年度的最后一天去完成才算是圆满，而是更能去接受自己抓住有限的空闲时间，去做自己认为意义度最高的事，但一直围绕第一象限的重要和紧急维度原则。</p>
+<p>今年塞进年度随心记的歌，没有任何的可以筛选，如果没有出现意外，无疑是一首BPM在138左右的Uplifting Trance，但是最终敲定是一首彝族歌曲，它是我在YouTube学习有线Mesh组网回程的时候，无意被推荐到的一首。第一次听到的时候，莫名的很有一种松弛感，很久违，我真的觉得很棒，休息天，拉开窗帘，大太阳晒在被子上，听着小曲，睡着懒觉，巨哇塞。所以它值得被分享给更多需要松弛感的“牛马”。</p>
+<p>回头看24年，其实没感受到自己今年做了什么很有意义的事，让自己的幸福指数有所提升。就是很平平淡淡的一年，从8月中旬开始到11月下旬，几乎陆续开始连轴转，加不完班，处理不完的需求。鬼知道今年为什会有这么多，更恶心的是：还不提供匹配的资源人，是很绝望。</p>
+<p>总体来说今年的达成率为：75%。市级3项：计算机程序设计员（三级&#x2F;高级）、人工智能数据标注、人工智能模型运用；国家级1项：系统集成项目管理工程师，由于后半段工作上，实在挤不出时间去考，所以今年也很遗憾。但是从来不怕失去和重头再来的勇气，25年度，再来干。</p>
+<p>但是比较关注计算机程序设计员（三级&#x2F;高级），对于市里后期举办的职业技能大赛——计算机程序员（二级&#x2F;技师），算是一张参赛资格门票，今年收到活动参赛邀请，但由于23年证书颁发时间相差一个月左右，导致没有资格参赛，所以25年比较care。</p>
+<p><img src="http://bucketpicture.19950628.xyz/picture/2024/0.jpg"></p>
+<p><img src="http://bucketpicture.19950628.xyz/picture/2024/1.png"></p>
+<p>对于25年的规划，目前敲定3项：系统集成项目管理工程师、软件评测师、高级数据分析师。可能也没有太多时间去规划更多，大概率今年会跳槽，因为喊了两年，考虑大环境的问题，相对不是太稳定，一直都是蠢蠢欲动未发动，但是依据目前现有的附加参数buff，我觉得自己有能力，也有胆识，破一下当前加不完班的局。最主要推动的原因是：外包的无下限压榨，虽然不确定下一家是不是同样的吸血狂魔，但至少可以选择当下自己的环境。</p>
+<p>农历腊月初，回去躺下后，刷到的这样的一个话题</p>
+<p><img src="http://bucketpicture.19950628.xyz/picture/2024/2.jpg"></p>
+<p>我想可能最自豪的事是：读了一本书，叫《基层女性》。这本书总体评价褒贬不一，但是我是站前者，因为它的作者王慧玲，太敢讲，虽然这本书更多的是站在女性角度去看待问题，但我认为受众群体应该扩大至每一个农村出生的基层子女。</p>
+<p><img src="http://bucketpicture.19950628.xyz/picture/2024/3.jpg"></p>
+<p>从开始的原生家庭，出生的环境是自己没法选择的，这点是要认的。但是，对于如何从原生家庭中断奶，作为农村出生的我来讲，是有那么一丝丝见解的。书中表达的，经济独立是基础，可是对于中国农村家庭，父母的认知基本都是固守的老一辈思想，不可否认的是有些许是正确的。但是对于子女中男孩子来讲，与原生家庭，是没法从经济上100%断开的。很现实的，从你自己大学毕业，刚入社会，你什么都不懂，你需要在这个社会存活，固然是需要一份工作，这里的工作不管是上班还是创业，你都需要类似“启动资金”，由于缺乏，所以很难开始，父母的介入，意在进行助力你向更好的方向发展，中途有人脉关系的，尝试着为你打点，没有人脉关系的，直接性的提供经济保障，说穿了就是兜底，同样的，这个阶段也是女孩子也会经历的。过几年，到了该结婚的年龄，实打实的摆在眼前，全都是要花钱的，彩礼、五金、酒席、房子、车子……，试问一下，哪个没有人民币的味道？单凭借一个上了三四年班的毛头小伙，能在外面不欠债就已经很不错了，更别提存款，而就这单单5样，那样不够喝一壶？对于女孩子而言，这个阶段的压力，可能会小点，所以也是我认为，最容易与父母原生家庭断开经济联系，最好的时机，因为有了自己新的家庭，完全可以独立出来。但是不排除一些极端现象，譬如说：嫁的不遂心，经常被家暴等。所以从经济角度来讲，中国社会父母有一定能力，还是会提供，不可能眼睁睁看着，当做局外人。而对于精神独立，我觉得是最可以实现的，但是我觉的有个前提，就是你的生活起居一定要从活了十几年的现有环境中，脱离出来，也就是不要再和父母一起居住，自己独自去感受当下这个社会，形成自己的独立性人格。我认为最好的理想状态是：原生家庭，教会你的仅仅是怎样活着。至于过上怎样的生活，完全可以凭借自身的能力去争取，无需完全接纳旧有的固守思维去进行尘封式继承，更多的去发挥，作为个人的主观能动性。</p>
+<p>过渡到第二个观点：自我成长。它是这本书中，我认为最具有价值的核心部分，当然全书都很有价值。自我成长，它不是一个简单的伪命题，如果是让我去总结它的纲领，我一定会加上两个字—野蛮，自我野蛮成长。我自己个人是非常喜欢独立性比较强的主观人格的人，因为这意味着不需要外界强有力的迫使驱动，而可以通过自我驱动，以此来完成某些目标。自我成长的前期，最重要的是方向的选择，方向不对，大部分后续都是徒劳，成长是需要有目标，需要有标杆的。这个过程一定不会势如破竹，一定会艰难且拧巴的，不断的纠结、质疑、否认。所以在此期间，我自己会允许一切情况的发生，因为即然发生，定当是有它存在的合理性。但是，我自己会非常着重关注，发生后，我自己给出的解决方案是什么，如何在下次尽可能的避免，能不能通过其它渠道或者途径去平替。同样，这个阶段也是自己增值的一个过程，千亿投资不如投资自我，靠山山会倒，我认为只有毫无保留去选择自己、投资自己、相信自己、成为自己才是一个合理既定的趋势。勇敢的去大胆探索，不管追求的是经济、利益、权势或者其他，只要不触碰到底线，都可以去进行下沉，不要一开始就寻求最终会得到什么，因为可能最后，什么都没有，然后自己还会舍掉一些东西，而且很多事情大概率都是失败的，在我认为：成功从来都没有归属性质，而是恰巧天时地利人和，这次轮到了你。如果4年前，我没有能够去考虑自我投资，可能现在此时此刻，应该或许大概，早就从上海滚蛋，回老家哪个汽修厂里起早贪黑，抡起扳手，大飞在修车，每天累死累活挣辛苦钱，更别提现在能够在二线城市买房结婚生娃，这些都是不敢想的。17年毕业，来上海的一行几个人中，能留在上海继续发展的，真的不知道还有谁，平时很想聚聚，都不知道call谁。所以对于自我成长，它同样可能来自于忧患意识，它的本质在我理解下来是：在极度环境下，能够通过前期自我投资积累，来应对未来不可预测的风险，增强自身的抵抗力，来达到极限生存。</p>
+<p>全书的最后一个观点：两性关系。当我看到这个观点的时候，还是蛮有感触的，当然不是站在一个已婚者的角度，而是站在一个差点已婚者的角度去看待，婚姻是人生中不可或缺的一环，它虽不是人生中的必选项，但是它是大部分人，人生中标志性的一个节点。不管是结婚还是不结婚，在于每个人的看待和取舍，当然从我的角度认为：婚要结，如果自己的另一半是一个情绪稳定，懂感恩的，嘴巴都会笑歪了。因为一个同频的人，带来的不仅仅是交流沟通的障碍无阻，其实更多的是默契度上的配合，也就是合拍。当然婚姻也不是恋爱的坟墓，恋爱的目的从来都是付出爱、获得爱，感受亲密关系带来的舒适，而不应该是结婚，结婚只是恋爱自然而然的结果‌。对我自己来说，寻求的一直都是平淡的婚姻，不需要什么大富大贵，就简简单单的过个普通人的生活，两个人没有吵架，没有冷暴力，更没有家庭暴力，偶尔小浪漫，下班回家一起做做饭，闲暇时间一起出去旅旅游，就挺好，不需要别人怎么去评价，自己觉得好，那就好。但是婚姻从恋爱阶段就要远离贫瘠的人，包括多方面，占据第一位的，在我认为就是：无限消耗你自身能量的，因为真就是个无底洞，你填不满，你也接受不了自身付出后，连得到些许微落残光的资格都没有，所以自己在寻找另一半的时候，多注重精神食粮，因为一旦走进婚姻，后悔药：离婚，不是很轻易或者洒脱就能完成的。就像书中原话：“只要不随便乱生孩子和乱结婚，人生再差能差到哪去，30天的冷静期和塞不回去的娃，才是真正的完蛋，其他都不是事”。其实书中还有个很隐晦的点，没有拿到台面上讲，就是：出轨。在我认为：一旦这件事发生，别犹豫，立马斩，因为它和家庭暴力一样，只有0和无限次。</p>
+<p>25年，目前刚开始读的一本书叫：《我在北京送快递》。</p>
+<p>展望一下25年，30岁，承上启下的一年，其实今年自己最想解决的两个问题，第一是：到底继续待在上海发展，还是回无锡发展；第二是：谈对象结婚。前者的取舍点在于：上海的行业缺口就业机会大，薪资还算能接受，发展空间足够，但是没法定居；无锡行业缺口少，薪资缩水严重，但是生活节奏慢，可以定居。后者的矛盾点是：两个人的事情，一个人再怎么努力，就是完成不了。</p>
+<p>今年春节休假比较早，今天是最后一个工作日。为了完成22年的许愿计划，准备回去买车啦，说实话，蛮感恩过去的7年，7年里，有个健壮的身体，有份像样的工作，有了属于自己窝，马上也要迎接属于自己的四轮子，还是很欣慰的。</p>
+<p>接下来25年的平时闲暇时间，准备把计划两年的个人博客烂摊子，重新收拾好，大体框架已基本构建好，后端数据库部署上还有点问题以及内网穿透服务方案的重新选择，23年对外提供的短链接服务，因涉及私有数据化信息已取消，取而代之的是新的方案，全新<a target="_blank" rel="noopener" href="https://urlgenerate.19950628.xyz/">Web</a>已重新部署。还有就是想把体脂往下降一降，目前尝试16+8和5+2的轻断食，吃的真苟，全是玉米棒子、黄瓜、胡萝卜、鸡蛋……</p>
+<p><img src="http://bucketpicture.19950628.xyz/picture/2024/4.png"></p>
+<p><img src="http://bucketpicture.19950628.xyz/picture/2024/5.png"></p>
  
       <!-- reward -->
       
@@ -221,7 +217,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://blog.19950628.xyz/2021/03/30/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://blog.19950628.xyz/2025/01/16/CarrolChen's%202024/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -232,19 +228,10 @@
    
   <nav class="article-nav">
     
-      <a href="/2021/03/31/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89/" class="article-nav-link">
-        <strong class="article-nav-caption">啵一下</strong>
-        <div class="article-nav-title">
-          
-            《Python编程：从入门到实践（第二版）》自学笔记（十四）
-          
-        </div>
-      </a>
     
-    
-      <a href="/2021/03/29/%E3%80%8APython%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89%E3%80%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89/" class="article-nav-link">
+      <a href="/2024/02/03/2023%EF%BC%8C%E7%A8%8D%E6%9C%89%E4%B8%80%E4%B8%9D%E9%81%97%E6%86%BE%E7%9A%84%E5%A4%A7%E6%BB%A1%E8%B4%AF/" class="article-nav-link">
         <strong class="article-nav-caption">嗦一下</strong>
-        <div class="article-nav-title">《Python编程：从入门到实践（第二版）》自学笔记（十二）</div>
+        <div class="article-nav-title">2023，稍有一丝遗憾的大满贯</div>
       </a>
     
   </nav>
